@@ -1,0 +1,27 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+header{
+
+	background-color: red;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:35px 100px 0;
+
+}
+header nav li{
+	margin:0 15px;
+}
+
+li{
+	list-style: none;
+}
+
+nav{
+	display: flex;
+	float: right;
+}
