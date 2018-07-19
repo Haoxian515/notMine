@@ -10,6 +10,7 @@ body{
 	background-color: #E8F0F6;
 	margin:0;
 	height:100%;
+	margin-bottom: 50px;
 }
 
 header{
@@ -52,6 +53,7 @@ section{
 .recipe{
 	text-align: center;
 	display: flex;
+	flex-wrap:wrap;
 	margin-top: 1em;
 	width: 100%;
   /*flex-flow:row wrap;}*/
@@ -62,17 +64,25 @@ section{
 	padding: 20px;
 }
 
-.recipe div{
-	background-color: red;
-	min-width: 15em;
-	max-width:300px;
+.recipe .grid {
+	width:100%;
+	height: auto;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
 }
 
+.recipe .grid div {
+	background-color: #708090;
+	flex-basis:15%;
+	margin: 10px;
+
+}
 
 .recipe img{
 	padding: 5%;
 	min-width: 15em;
-	max-width:200px;
+	max-width:10%;
 }
 
 

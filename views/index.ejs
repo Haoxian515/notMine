@@ -14,11 +14,23 @@
 
 <section class="recipe">
 	<h2>Whats popular!</h2>
-	<div>
-		<h3>Recipe name</h3>
-		<img src="https://tinyurl.com/ybpbelhk"></img>
-		<h3> Author</h3>
+
+	<div class="grid">
+
+		<% testArray.forEach(function(obj){ %>
+
+			<div>			
+
+					<h2><%= obj.name %></h2>
+					<img src="<%= obj.img %>"><img>
+					<p><%= obj.title %> </p>
+
+			</div>
+
+		<% }) %>
+
 	</div>
+
 
 </section>
 
