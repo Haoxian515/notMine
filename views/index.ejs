@@ -12,27 +12,41 @@
 </header>
 
 
+
+
 <section class="recipe">
-	<h2>Whats popular!</h2>
 
-	<div class="grid">
+	<div class="flex-grid">
 
-		<% testArray.forEach(function(obj){ %>
+		<div class="category">
 
-			<div>			
+				<div >			
+					<span class="fa-stack fa-4x">
+						<i class="fas fa-circle fa-stack-2x" style="color:black"></i>
+						<i class="fas fa-utensils fa-stack-1x fa-inverse"></i>
+					</span>
 
-					<h2><%= obj.name %></h2>
-					<img src="<%= obj.img %>"><img>
-					<p><%= obj.title %> </p>
-
-			</div>
-
-		<% }) %>
-
+					<h2>Food</h2>
+					<p> Amazing recipe blah blah </p>
+				</div>
+		</div>
 	</div>
 
+<!-- 		<div>			
+			<h2>Food</h2>
+			<p> Amazing recipe blah blah </p>
+		</div>
+
+		<div>			
+			<h2>Dessert</h2>
+			<p> Amazing recipe blah blah </p>
+		</div> -->
+
+	<!-- grid -->
 
 </section>
+
+
 
 <!-- <section>
 	Main page iddsadsak

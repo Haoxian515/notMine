@@ -14,27 +14,38 @@ mongoose.connect('mongodb://localhost:27017/notMyRecipes', {useNewUrlParser: tru
 app.use(bodyParser.urlencoded({extended: true}));
 
 //MAIN
-var testArr = [{
-				name:"jon", 
-				img:"https://tinyurl.com/ybpbelhk", 
-				title:"whey shake" 
-				},
-				{
-				name:"ben", 
-				img:"https://tinyurl.com/ybpbelhk", 
-				title:"fried rice" 
-				},
-				{
-				name:"jian hao", 
-				img:"https://tinyurl.com/ybpbelhk", 
-				title:"i toss trash across the street" 
-				},
-				
-				]
+
+
+// var testArr = [	{
+// 					name:"jon", 
+// 					img:"https://tinyurl.com/ybpbelhk", 
+// 					title:"whey shake"
+// 				},
+
+// 				{
+// 					name:"ben", 
+// 					img:"https://tinyurl.com/ybpbelhk", 
+// 					title:"fried rice" 
+// 				},
+
+// 				{
+// 					name:"jian hao", 
+// 					img:"https://tinyurl.com/ybpbelhk", 
+// 					title:"i toss trash across the street" 
+// 				}
+// 			]
+
+// app.get("/", function(req, res){
+// 	res.render("index", {testArray: testArr})
+// })
 
 app.get("/", function(req, res){
-	res.render("index", {testArray: testArr})
+	res.render("index")
 })
+
+// app.get("/:", function(req, res){
+// 	res.render("index")
+// })
 
 
 app.use(recipeRoute)
