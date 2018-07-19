@@ -12,6 +12,7 @@ mongoose.connect('mongodb://localhost:27017/notMyRecipes', {useNewUrlParser: tru
 
 
 app.use(bodyParser.urlencoded({extended: true}));
+
 //MAIN
 app.get("/", function(req, res){
 	res.render("index")
@@ -19,10 +20,6 @@ app.get("/", function(req, res){
 
 
 app.use(recipeRoute)
-// app.post("/api/recipe", function(req, res){
-// 	console.log("posting stuff!")
-
-// })
 
 
 app.listen(PORT_NUM, function(){

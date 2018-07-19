@@ -3,10 +3,18 @@
 	padding:0;
 	box-sizing:border-box;
 }
+html{
+	height: 100%;
+}
+body{
+	background-color: #E8F0F6;
+	margin:0;
+	height:100%;
+}
 
 header{
 
-	background-color: red;
+	background-color: #00724A;
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
@@ -25,3 +33,47 @@ nav{
 	display: flex;
 	float: right;
 }
+
+section{
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+
+	/*height: 20%;*/
+
+	/*background-color: #FFAB00;*/
+
+}
+
+
+/*///////*/
+/*recipe*/
+/*//////*/
+.recipe{
+	text-align: center;
+	display: flex;
+	margin-top: 1em;
+	width: 100%;
+  /*flex-flow:row wrap;}*/
+}
+
+.recipe h2{
+	font-size: 50px;
+	padding: 20px;
+}
+
+.recipe div{
+	background-color: red;
+	min-width: 15em;
+	max-width:300px;
+}
+
+
+.recipe img{
+	padding: 5%;
+	min-width: 15em;
+	max-width:200px;
+}
+
+
+
