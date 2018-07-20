@@ -56,26 +56,35 @@ section{
  	flex-wrap:wrap;
  	justify-content:space-evenly;
  	width: 80%;
-
+ 	padding-top: 1em;
  }
 
  .category{
- 	/*position: relative;*/
  	display: inline-flex;
  	flex-direction:row;
  	flex-wrap:wrap;
 
  	text-align: center;
- 	background-color: red;
- 	width: 30%;
+ 	background-color: #5ddd5d;
+ 	width: 10%;
  	height: 300px;
+ 	margin: 1%;
  	min-height: 20em;
- 	min-width: 20em;
+ 	min-width: 16em;
+ 	border-radius: 5%;
+
+ 	box-shadow: 0 0 1em;
  }
 
  .category .upper{
+ 	background-color: #3455DB;
  	height: 60%;
  	width: 100%;
+ 	border-top-left-radius: 5%;
+ 	border-top-right-radius: 5%;
+
+ 	padding-top: 5%;
+
  }
  .category .lower{
  	height: 40%;
