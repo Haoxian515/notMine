@@ -1,1 +1,13 @@
 drinks route ejs
+
+<div style="display:flex; flex-wrap:wrap; padding:5em;">
+	<% foundRecipes.forEach(function(recipe){ %>
+		<div style="width:20%">
+			<h3> NEW RECIPE </h3>
+			<div>Title: <%= recipe.title %> </div>
+			<div>Ingredients:  <%= recipe.ingredients %> </div>
+			<div>Rating:  <%= recipe.rating %> </div>
+			<div>Instructions:  <%= recipe.instructions %> </div>
+		</div>
+	<% }) %>
+</div>

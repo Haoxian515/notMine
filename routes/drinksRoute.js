@@ -1,11 +1,8 @@
 var express 		= require("express");
 var router 			= express.Router()
-var Recipe 	= require("../models/recipesSchema")
+var Recipe 	= require("../models/recipesSchema"),
+	helpers = require("../helpers/drinksRecipes")
 
-router.get("/", function(req, res){
-
-	res.render("drinks")
-
-})
+router.get("/", helpers.displayDrinkRecipes)
 
 module.exports = router;

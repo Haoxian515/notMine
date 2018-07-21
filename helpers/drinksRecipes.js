@@ -14,4 +14,18 @@ exports.getDrinkRecipes = function(req, res){
 
 }
 
+exports.displayDrinkRecipes = function(req, res){
+
+	Recipe.find({},{'_id': false}, function(err, foundRecipes){
+		if(err){
+			console.log(err)
+			res.redirect("/")
+		}else{
+			// console.log(foundRecipe)
+			res.render("drinks", {foundRecipes:foundRecipes })
+		}
+	})
+
+}
+
 module.exports = exports;
