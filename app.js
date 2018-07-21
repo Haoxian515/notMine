@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 //MAIN
 
-
+//push to db
 // var inputFile='drinks_test.csv';
 // var parser = parse({delimiter: ','}, function (err, data) {
 //   async.eachSeries(data, function (line, callback) {
@@ -32,12 +32,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 // 		console.log(line)
 // 		var newRecipe = {
 // 			date: line[0], 
-// 			title: line[1], 
-// 			img_source: line[2],
-// 			ingredients: line[3],
-// 			instructions: line[4],
-// 			rating: line[5],
-// 			recipe_source: line[6]
+// 			category: line[1],
+// 			title: line[2], 
+// 			img_source: line[3],
+// 			ingredients: line[4],
+// 			instructions: line[5],
+// 			rating: line[6],
+// 			recipe_source: line[7]
 // 		};
 // 		Recipe.create(newRecipe, function(err, recipe){
 // 			if(err){
