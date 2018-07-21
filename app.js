@@ -62,6 +62,13 @@ app.get("/", function(req, res){
 })
 
 app.use("/drinks", drinksRoute);
+app.get("/food", function(req, res){
+	res.render("food")
+})
+
+app.get("/dessert", function(req, res){
+	res.render("dessert")
+})
 
 app.use("/api/drinks", drinksAPIRoute);
 

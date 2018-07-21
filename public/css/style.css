@@ -15,14 +15,16 @@ body{
 
 header{
 
-	background-color: #00724A;
+	background-color: white;
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
 	padding:35px 100px 0;
 
 }
+
 a{
+	color: black;
 	text-decoration: none;
 
 }
@@ -80,7 +82,7 @@ section{
  	flex-wrap:wrap;
 
  	text-align: center;
- 	background-color: #5ddd5d;
+ 	/*background-color: #5ddd5d;*/
  	width: 10%;
  	height: 300px;
  	margin: 1%;
@@ -92,15 +94,22 @@ section{
  }
 
  .category .upper{
- 	background-color: #3455DB;
+ 	/*background-color: #3455DB;*/
  	height: 60%;
  	width: 100%;
  	border-top-left-radius: 5%;
  	border-top-right-radius: 5%;
 
- 	padding-top: 5%;
+ 	overflow: hidden;
+ 	/*padding-top: 5%;*/
 
  }
+
+ .upper img{
+ 	height:100%;
+ 	width:100%
+ }
+
  .category .lower{
  	height: 40%;
  	width: 100%;

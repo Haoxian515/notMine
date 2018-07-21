@@ -1,13 +1,15 @@
-drinks route ejs
+<% include partials/header%>
 
-<div style="display:flex; flex-wrap:wrap; padding:5em;">
-	<% foundRecipes.forEach(function(recipe){ %>
-		<div style="width:20%">
-			<h3> NEW RECIPE </h3>
-			<div>Title: <%= recipe.title %> </div>
-			<div>Ingredients:  <%= recipe.ingredients %> </div>
-			<div>Rating:  <%= recipe.rating %> </div>
-			<div>Instructions:  <%= recipe.instructions %> </div>
-		</div>
-	<% }) %>
-</div>
+<section>
+	<div style="display:flex; flex-wrap:wrap; padding:3vw; justify-content: space-evenly">
+		<% foundRecipes.forEach(function(recipe){ %>
+			<div style="width:15%; padding: 1vw; text-align:center">
+				<h3> NEW RECIPE </h3>
+				<div>Title: <%= recipe.title %> </div>
+				<div>Ingredients:  <%= recipe.ingredients %> </div>
+				<div>Rating:  <%= recipe.rating %> </div>
+				<div>Instructions:  <%= recipe.instructions %> </div>
+			</div>
+		<% }) %>
+	</div>
+</section>
