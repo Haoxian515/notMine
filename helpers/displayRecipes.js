@@ -17,6 +17,8 @@ exports.getDrinkRecipes = function(req, res){
 
 exports.displayDrinkRecipes = function(req, res){
 
+console.log(req.originalUrl)
+
 	Recipe.find({},{'_id': false}, function(err, foundRecipes){
 		if(err){
 			console.log(err)
@@ -37,7 +39,7 @@ exports.displayFoodRecipes = function(req, res){
 			res.redirect("/")
 		}else{
 			// console.log(foundRecipe)
-			res.render("recipes", {foundRecipes:foundRecipes })
+			res.render("recipes", {foundRecipes:foundRecipes})
 		}
 	})
 
