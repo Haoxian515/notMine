@@ -1,38 +1,53 @@
 <% include partials/header %>
 
-
-<header>
-	<h2>NOT MY RECIPES</h2>
-
-	<nav>
-		<li>123</li>
-		<li>456</li>
-
-	</nav>
-</header>
-
-
 <section class="recipe">
-	<h2>Whats popular!</h2>
 
-	<div class="grid">
+	<div class="flex-grid">
 
-		<% testArray.forEach(function(obj){ %>
 
-			<div>			
+		<a  href="/drinks" class="category">
+				<div class="upper">			
 
-					<h2><%= obj.name %></h2>
-					<img src="<%= obj.img %>"><img>
-					<p><%= obj.title %> </p>
+					<img src="/assets/drinks_image.jpeg">
+				</div>
 
-			</div>
+				<div class="lower">
+					<h2>Drinks</h2>
+					<p>Thirsty?<br> brew your drink!</p>
+				</div>
+		</a>
+		<!-- drinks category -->
 
-		<% }) %>
+		<a  href="/food" class="category">
+				<div class="upper">			
 
+					<img src="/assets/food_image.jpeg">
+				</div>
+
+				<div class="lower">
+					<h2>Food</h2>
+					<p>Hungry?<br>Look up recipes on how to cook!</p>
+				</div>
+		</a>
+		<!-- foods category -->
+
+		<a  href="/dessert" class="category">
+				<div class="upper">			
+
+					<img src="/assets/dessert_image.jpeg">
+				</div>
+
+				<div class="lower">
+					<h2>Desserts</h2>
+					<p>Sweets?<br> We got you covered</p>
+				</div>
+		</a>
+		<!-- dessert category -->
 	</div>
 
-
 </section>
+
+
 
 <!-- <section>
 	Main page iddsadsak

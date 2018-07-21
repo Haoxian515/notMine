@@ -1,8 +1,16 @@
 var express = require("express"),
 	app = express()
-var bodyParser 	= require("body-parser"), 
-    mongoose	= require("mongoose"),
-    recipeRoute	= require("./routes/recipe")
+var bodyParser 		= require("body-parser"), 
+    mongoose		= require("mongoose"),
+    recipeRoute		= require("./routes/recipe"),
+    fs				= require("fs"),
+    parse 			= require('csv-parse'),
+    async 			= require('async');
+    Recipe			= require("./models/recipesSchema"),
+    drinksAPIRoute	= require("./routes/api/api_drinks"),
+    drinksRoute 	= require("./routes/drinksRoute")
+
+
 
 app.use(express.static(__dirname + '/public'));
 const PORT_NUM = 3000;
@@ -14,30 +22,60 @@ mongoose.connect('mongodb://localhost:27017/notMyRecipes', {useNewUrlParser: tru
 app.use(bodyParser.urlencoded({extended: true}));
 
 //MAIN
-var testArr = [{
-				name:"jon", 
-				img:"https://tinyurl.com/ybpbelhk", 
-				title:"whey shake" 
-				},
-				{
-				name:"ben", 
-				img:"https://tinyurl.com/ybpbelhk", 
-				title:"fried rice" 
-				},
-				{
-				name:"jian hao", 
-				img:"https://tinyurl.com/ybpbelhk", 
-				title:"i toss trash across the street" 
-				},
-				
-				]
+
+
+// var inputFile='drinks_test.csv';
+// var parser = parse({delimiter: ','}, function (err, data) {
+//   async.eachSeries(data, function (line, callback) {
+//     // do something with the line
+
+// 		console.log(line)
+// 		var newRecipe = {
+// 			date: line[0], 
+// 			title: line[1], 
+// 			img_source: line[2],
+// 			ingredients: line[3],
+// 			instructions: line[4],
+// 			rating: line[5],
+// 			recipe_source: line[6]
+// 		};
+// 		Recipe.create(newRecipe, function(err, recipe){
+// 			if(err){
+// 				console.log(err)
+// 			}else{
+// 				console.log("saved to db")
+// 			}
+// 		})
+//     // doSomething(line).then(function() {
+//     //   // when processing finishes invoke the callback to move to the next one
+//       callback();
+//     // });
+//   })
+// });
+// fs.createReadStream(inputFile).pipe(parser);
+
+
+
 
 app.get("/", function(req, res){
-	res.render("index", {testArray: testArr})
+	res.render("index")
 })
 
+app.use("/drinks", drinksRoute);
+app.get("/food", function(req, res){
+	res.render("food")
+})
 
-app.use(recipeRoute)
+app.get("/dessert", function(req, res){
+	res.render("dessert")
+})
+
+app.use("/api/drinks", drinksAPIRoute);
+
+
+app.get("*", function(req, res){
+	res.send("page not found")
+})
 
 
 app.listen(PORT_NUM, function(){

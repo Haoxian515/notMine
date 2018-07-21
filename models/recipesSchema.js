@@ -1,19 +1,16 @@
 var mongoose = require('mongoose')
 
 var RecipeSchema = new mongoose.Schema({
-  author: {
-    id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User"
-    },
-    userName:String
-  },
+
   title: String,
   description: String,
-  cost: {
-    type: Number,
-    minimum: 0
-  },
+  instructions:[{
+  	type:String
+  }],
+  ingredients: String,
+  img_src: String,
+  rating: Number,
+  recipeSource:String,
   postDate:{
     type: Date,
     default: Date.now
