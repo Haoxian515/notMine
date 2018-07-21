@@ -23,13 +23,13 @@ exports.displayDrinkRecipes = function(req, res){
 			res.redirect("/")
 		}else{
 			// console.log(foundRecipe)
-			res.render("drinks", {foundRecipes:foundRecipes })
+			res.render("recipes", {foundRecipes:foundRecipes })
 		}
 	})
-
 }
+// drinks route
 
-exports.displayDrinkRecipes = function(req, res){
+exports.displayFoodRecipes = function(req, res){
 
 	Recipe.find({},{'_id': false}, function(err, foundRecipes){
 		if(err){
@@ -37,13 +37,13 @@ exports.displayDrinkRecipes = function(req, res){
 			res.redirect("/")
 		}else{
 			// console.log(foundRecipe)
-			res.render("drinks", {foundRecipes:foundRecipes })
+			res.render("recipes", {foundRecipes:foundRecipes })
 		}
 	})
 
 }
 
-exports.displayDrinkRecipes = function(req, res){
+exports.displayDessertRecipes = function(req, res){
 
 	Recipe.find({},{'_id': false}, function(err, foundRecipes){
 		if(err){
@@ -51,7 +51,7 @@ exports.displayDrinkRecipes = function(req, res){
 			res.redirect("/")
 		}else{
 			// console.log(foundRecipe)
-			res.render("drinks", {foundRecipes:foundRecipes })
+			res.render("recipes", {foundRecipes:foundRecipes })
 		}
 	})
 

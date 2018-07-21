@@ -2,12 +2,12 @@ var express = require("express"),
 	app = express()
 var bodyParser 		= require("body-parser"), 
     mongoose		= require("mongoose"),
-    recipeRoute		= require("./routes/recipe"),
+    // recipeRoute		= require("./routes/recipe"),
     fs				= require("fs"),
     parse 			= require('csv-parse'),
     async 			= require('async');
     Recipe			= require("./models/recipesSchema"),
-    drinksAPIRoute	= require("./routes/api/api_drinks"),
+    // drinksAPIRoute	= require("./routes/api/api_drinks"),
     recipesRoute 	= require("./routes/recipesRoute")
 
 
@@ -62,16 +62,6 @@ app.get("/", function(req, res){
 })
 
 app.use("/", recipesRoute);
-
-// app.get("/food", function(req, res){
-// 	res.render("food")
-// })
-
-// app.get("/dessert", function(req, res){
-// 	res.render("dessert")
-// })
-
-app.use("/api/drinks", drinksAPIRoute);
 
 
 app.get("*", function(req, res){
