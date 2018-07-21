@@ -5,4 +5,9 @@ var Recipe 	= require("../models/recipesSchema"),
 
 router.get("/recipes/drinks", helpers.displayDrinkRecipes)
 
+router.get("/recipes/food", helpers.displayDrinkRecipes)
+
+router.get("/recipes/dessert", helpers.displayDrinkRecipes)
+
+
 module.exports = router;

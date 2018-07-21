@@ -13,6 +13,7 @@ exports.getDrinkRecipes = function(req, res){
 	})
 
 }
+// drinks json
 
 exports.displayDrinkRecipes = function(req, res){
 
@@ -22,7 +23,7 @@ exports.displayDrinkRecipes = function(req, res){
 			res.redirect("/")
 		}else{
 			// console.log(foundRecipe)
-			res.render("recipes", {foundRecipes:foundRecipes })
+			res.render("drinks", {foundRecipes:foundRecipes })
 		}
 	})
 
@@ -36,7 +37,7 @@ exports.displayDrinkRecipes = function(req, res){
 			res.redirect("/")
 		}else{
 			// console.log(foundRecipe)
-			res.render("recipes", {foundRecipes:foundRecipes })
+			res.render("drinks", {foundRecipes:foundRecipes })
 		}
 	})
 
@@ -50,7 +51,7 @@ exports.displayDrinkRecipes = function(req, res){
 			res.redirect("/")
 		}else{
 			// console.log(foundRecipe)
-			res.render("recipes", {foundRecipes:foundRecipes })
+			res.render("drinks", {foundRecipes:foundRecipes })
 		}
 	})
 
