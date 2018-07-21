@@ -8,7 +8,7 @@ var bodyParser 		= require("body-parser"),
     async 			= require('async');
     Recipe			= require("./models/recipesSchema"),
     drinksAPIRoute	= require("./routes/api/api_drinks"),
-    drinksRoute 	= require("./routes/drinksRoute")
+    recipesRoute 	= require("./routes/recipesRoute")
 
 
 
@@ -61,14 +61,15 @@ app.get("/", function(req, res){
 	res.render("index")
 })
 
-app.use("/drinks", drinksRoute);
-app.get("/food", function(req, res){
-	res.render("food")
-})
+app.use("/", recipesRoute);
 
-app.get("/dessert", function(req, res){
-	res.render("dessert")
-})
+// app.get("/food", function(req, res){
+// 	res.render("food")
+// })
+
+// app.get("/dessert", function(req, res){
+// 	res.render("dessert")
+// })
 
 app.use("/api/drinks", drinksAPIRoute);
 
