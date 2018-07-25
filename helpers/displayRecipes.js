@@ -16,7 +16,7 @@ var Recipe = require("../models/recipesSchema");
 // drinks json
 exports.displayRecipes = function(req, res){
 
-console.log(req.params.category)
+// console.log(req.params.category)
 var category = req.params.category
 	Recipe.find({'category': category},{'_id': false}, function(err, foundRecipes){
 		if(err){
