@@ -2,13 +2,16 @@ var express = require("express"),
 	app = express()
 var bodyParser 		= require("body-parser"), 
     mongoose		= require("mongoose"),
-    // recipeRoute		= require("./routes/recipe"),
     fs				= require("fs"),
     parse 			= require('csv-parse'),
     async 			= require('async');
     Recipe			= require("./models/recipesSchema"),
-    // drinksAPIRoute	= require("./routes/api/api_drinks"),
-    recipesRoute 	= require("./routes/recipesRoute")
+    recipesRoute 	= require("./routes/recipesRoute"),
+    User 			= require("./models/userSchema"),
+    //authentication
+    passport		= require("passport"),
+    localStrategy 	= require("passport-local"),
+    authenticateRoute = require("./routes/authenticateRoute")
 
 
 
@@ -20,6 +23,19 @@ mongoose.connect('mongodb://localhost:27017/notMyRecipes', {useNewUrlParser: tru
 
 
 app.use(bodyParser.urlencoded({extended: true}));
+
+// all things user auth
+app.use(require("express-session")({
+	secret:"supersecret",
+	resave:false,
+	saveUninitialized:false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+passport.use(new localStrategy(User.authenticate()));
+//additionl function from passport-local-mongoose  npm
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 //MAIN
 
@@ -66,10 +82,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.get("/", function(req, res){
-	res.render("index")
+	console.log(req.user)
+	res.render("index", {currentUser: req.user})
 })
 
 app.use("/", recipesRoute);
+
+app.use("/", authenticateRoute);
+
+
 
 
 app.get("*", function(req, res){
