@@ -5,6 +5,7 @@ var Recipe 	= require("../models/recipesSchema"),
 
 
 router.get("/recipes/:category", helpers.displayRecipes)
+router.get("/recipes/:category/:id", helpers.recipeHowto)
 
 router.get("/api/:category", helpers.displayAPI)
 // router.get("/recipes/food", helpers.displayFoodRecipes)

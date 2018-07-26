@@ -18,7 +18,7 @@ exports.displayRecipes = function(req, res){
 
 // console.log(req.params.category)
 var category = req.params.category
-	Recipe.find({'category': category},{'_id': false}, function(err, foundRecipes){
+	Recipe.find({'category': category}, function(err, foundRecipes){
 		if(err){
 			console.log(err)
 			res.redirect("/")
@@ -28,6 +28,13 @@ var category = req.params.category
 		}
 	})
 }
+
+
+exports.recipeHowto = function(req, res){
+	res.render("recipeHowto")
+}
+
+
 
 exports.displayAPI = function(req, res){
 
