@@ -82,7 +82,8 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.get("/", function(req, res){
-	res.render("index")
+	console.log(req.user)
+	res.render("index", {currentUser: req.user})
 })
 
 app.use("/", recipesRoute);
