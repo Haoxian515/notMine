@@ -1,0 +1,100 @@
+<% include partials/header%>
+
+<!-- 0 1 2 3 4 5 6 7 8 -->
+<!-- 3 3 3 3 3 3 3 3 3 -->
+<!-- 0 1 2 0 1 2 0 1 2 -->
+<section>
+
+	<div style="display:flex; flex-direction: row; flex-wrap: wrap;justify-content:center; width:90vw;">
+
+			<div class="threeColumns">
+				<% for(var i = 0; i < foundRecipes.length; i++){ %>
+					<% if(i < foundRecipes.length && i % 3 === 0 ) { %>
+							<div class="individualRecipe">
+								<img src="<%= foundRecipes[i].image_link %>" style="width:100%; height:50%;">
+
+								<%= foundRecipes[i].title %>
+									<div>Ingredients:  
+										<% foundRecipes[i].ingredients.forEach(function(ingredient){ %>
+											<%= ingredient %> 
+											<br>
+										<% }) %> 
+									</div>
+
+									<div>Instructions:  
+										<% foundRecipes[i].instructions.forEach(function(instruction){ %>
+											<%= instruction %> 
+											<br>
+										<% }) %> 
+									</div>
+							</div>
+						<!-- individual recipe -->
+					<% } %>
+					<!-- column 1 logic -->
+			<!-- inner loop -->
+				<% } %>
+			</div>
+			<!-- column 1 -->
+
+			<div class="threeColumns">
+				<% for(var i = 0; i < foundRecipes.length; i++){ %>
+					<% if(i < foundRecipes.length && i % 3 === 1 ) { %>
+							<div class="individualRecipe">
+								<img src="<%= foundRecipes[i].image_link %>" style="width:100%; height:50%;">
+
+								<%= foundRecipes[i].title %>
+									<div>Ingredients:  
+										<% foundRecipes[i].ingredients.forEach(function(ingredient){ %>
+											<%= ingredient %> 
+											<br>
+										<% }) %> 
+									</div>
+
+									<div>Instructions:  
+										<% foundRecipes[i].instructions.forEach(function(instruction){ %>
+											<%= instruction %> 
+											<br>
+										<% }) %> 
+									</div>
+							</div>
+						<!-- individual recipe -->
+					<% } %>
+					<!-- column 2 logic -->
+			<!-- inner loop -->
+				<% } %>
+			</div>
+			<!-- column 2 -->
+
+			<div class="threeColumns">
+				<% for(var i = 0; i < foundRecipes.length; i++){ %>
+					<% if(i < foundRecipes.length && i % 3 === 2 ) { %>
+							<div class="individualRecipe">
+								<img src="<%= foundRecipes[i].image_link %>" style="width:100%; height:50%;">
+
+								<%= foundRecipes[i].title %>
+									<div>Ingredients:  
+										<% foundRecipes[i].ingredients.forEach(function(ingredient){ %>
+											<%= ingredient %> 
+											<br>
+										<% }) %> 
+									</div>
+
+									<div>Instructions:  
+										<% foundRecipes[i].instructions.forEach(function(instruction){ %>
+											<%= instruction %> 
+											<br>
+										<% }) %> 
+									</div>
+							</div>
+						<!-- individual recipe -->
+					<% } %>
+					<!-- column 3 logic -->
+			<!-- inner loop -->
+				<% } %>
+			</div>
+			<!-- column 3 -->
+ 
+	</div>
+	<!-- row of 3 columns -->
+</section>
+

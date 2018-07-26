@@ -1,16 +1,22 @@
 var mongoose = require('mongoose')
 
+  // category,title,image_link,ingredients,instructions,recipe_group,recipe_url
+
 var RecipeSchema = new mongoose.Schema({
 
   title: String,
   description: String,
+  category:String,
   instructions:[{
   	type:String
   }],
-  ingredients: String,
-  img_src: String,
+  ingredients: [{
+    type:String
+  }],
+  image_link: String,
   rating: Number,
-  recipeSource:String,
+  recipe_url:String,
+  recipe_group:String,
   postDate:{
     type: Date,
     default: Date.now
