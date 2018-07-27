@@ -9,12 +9,30 @@
 
 			<div class="threeColumns">
 				<% for(var i = 0; i < foundRecipes.length; i++){ %>
-					<% if(i < foundRecipes.length && i % 3 === 1 ) { %>
+					<% if(i < foundRecipes.length && i % 3 === 0 ) { %>
+						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
 							<div class="individualRecipe" >
 								<div class="title"><%= foundRecipes[i].title %> </div>
 								<img src="<%= foundRecipes[i].image_link%>">
-								<%= foundRecipes[i]._id%>
 							</div>
+						</a>
+						<!-- individual recipe -->
+					<% } %>
+					<!-- column 1 logic -->
+			<!-- inner loop -->
+				<% } %>
+			</div>
+			<!-- column 1 -->
+
+			<div class="threeColumns">
+				<% for(var i = 0; i < foundRecipes.length; i++){ %>
+					<% if(i < foundRecipes.length && i % 3 === 1 ) { %>
+						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
+							<div class="individualRecipe" >
+								<div class="title"><%= foundRecipes[i].title %> </div>
+								<img src="<%= foundRecipes[i].image_link%>">
+							</div>
+						</a>
 						<!-- individual recipe -->
 					<% } %>
 					<!-- column 1 logic -->
@@ -26,27 +44,12 @@
 			<div class="threeColumns">
 				<% for(var i = 0; i < foundRecipes.length; i++){ %>
 					<% if(i < foundRecipes.length && i % 3 === 2 ) { %>
+						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
 							<div class="individualRecipe" >
 								<div class="title"><%= foundRecipes[i].title %> </div>
 								<img src="<%= foundRecipes[i].image_link%>">
-
 							</div>
-						<!-- individual recipe -->
-					<% } %>
-					<!-- column 1 logic -->
-			<!-- inner loop -->
-				<% } %>
-			</div>
-			<!-- column 1 -->
-
-			<div class="threeColumns">
-				<% for(var i = 0; i < foundRecipes.length; i++){ %>
-					<% if(i < foundRecipes.length && i % 3 === 0 ) { %>
-							<div class="individualRecipe" >
-								<div class="title"><%= foundRecipes[i].title %> </div>
-								<img src="<%= foundRecipes[i].image_link%>">
-
-							</div>
+						</a>
 						<!-- individual recipe -->
 					<% } %>
 					<!-- column 1 logic -->

@@ -31,7 +31,8 @@ var category = req.params.category
 
 
 exports.recipeHowto = function(req, res){
-	res.render("recipeHowto")
+	console.log(req.params.id)
+	res.render("recipeHowto", { recipeId: req.params.id})
 }
 
 
