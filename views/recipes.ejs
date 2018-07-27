@@ -14,6 +14,31 @@
 							<div class="individualRecipe">
 									<img src="<%= foundRecipes[i].image_link%>">
 									<div class="title"><%= foundRecipes[i].title %> </div>
+									<!-- <a href="/"> -->
+										<form action="/recipes" method="POST">
+											<button>
+												<i class="fas fa-star fa-3x favorite2"></i>
+											</button>
+										</form>
+
+									<!-- </a> -->
+							</div>
+						</a>
+						<!-- individual recipe -->
+					<% } %>
+					<!-- column 1 logic -->
+			<!-- inner loop -->
+				<% } %>
+			</div>
+			<!-- column 1 -->
+
+			<div class="threeColumns">
+				<% for(var i = 0; i < foundRecipes.length; i++){ %>
+					<% if(i < foundRecipes.length && i % 3 === 1 ) { %>
+						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
+							<div class="individualRecipe">
+									<img src="<%= foundRecipes[i].image_link%>">
+									<div class="title"><%= foundRecipes[i].title %> </div>
 									<a href="/">
 										<div class="favorite"></div>
 									</a>
@@ -29,28 +54,14 @@
 
 			<div class="threeColumns">
 				<% for(var i = 0; i < foundRecipes.length; i++){ %>
-					<% if(i < foundRecipes.length && i % 3 === 1 ) { %>
-						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
-							<div class="individualRecipe" >
-								<div class="title"><%= foundRecipes[i].title %> </div>
-								<img src="<%= foundRecipes[i].image_link%>">
-							</div>
-						</a>
-						<!-- individual recipe -->
-					<% } %>
-					<!-- column 1 logic -->
-			<!-- inner loop -->
-				<% } %>
-			</div>
-			<!-- column 1 -->
-
-			<div class="threeColumns">
-				<% for(var i = 0; i < foundRecipes.length; i++){ %>
 					<% if(i < foundRecipes.length && i % 3 === 2 ) { %>
 						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
-							<div class="individualRecipe" >
-								<div class="title"><%= foundRecipes[i].title %> </div>
-								<img src="<%= foundRecipes[i].image_link%>">
+							<div class="individualRecipe">
+									<img src="<%= foundRecipes[i].image_link%>">
+									<div class="title"><%= foundRecipes[i].title %> </div>
+									<a href="/">
+										<div class="favorite"></div>
+									</a>
 							</div>
 						</a>
 						<!-- individual recipe -->

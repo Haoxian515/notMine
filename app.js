@@ -82,7 +82,7 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.get("/", function(req, res){
-	console.log(req.user)
+	// console.log(req.user)
 	res.render("index", {currentUser: req.user})
 })
 

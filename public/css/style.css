@@ -160,6 +160,33 @@ section{
 
 }
 
+.favorite2{
+    position: absolute;
+    color: yellow;
+    top: 5%;
+    right: 5%;
+}
+
+.favorite2:hover{
+
+	/*color: red;*/
+	/*transform: scale(1.10);*/
+	transform-origin: 50% 50%;
+
+	animation: spin 0.2s, ease;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(72deg);
+  }
+  100% {
+    transform: rotate(144deg);
+  }
+}
+
+
 .individualRecipe .title{
 	position:absolute;   
 	font-size: 20px;
