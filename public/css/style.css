@@ -134,6 +134,7 @@ section{
 	padding-top:0;
 	margin-bottom:1vw;
 	border: 1px;
+	position: relative;
 }
 .individualRecipe img{
 	width:100%; 
@@ -149,24 +150,26 @@ section{
 
 .favorite{
     position: absolute;
-    /*margin-left: 80%; */
-    /*top:100%;*/
-    margin-left: 200%;
-    width: auto;
-    height: 30px;
+    top: 5%;
+    right: 5%;
+    height: 10%;
+    width: 10%;
+    display: block;
     background-color: red;
     border-radius: 50%;
 
 }
 
 .individualRecipe .title{
-	position:relative;   
+	position:absolute;   
 	font-size: 20px;
 	color: #ffffff;
 	text-align: center;
 	text-shadow: -3px 0 3px black, 3px 0 3px black, 0 3px 3px black, 0 -3px 3px black;
 	
-	top: 30px;
+	top: 5%;
+	left: 50%;
+    transform: translate(-50%, -50%);
 
 }
 

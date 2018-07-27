@@ -10,13 +10,14 @@
 			<div class="threeColumns">
 				<% for(var i = 0; i < foundRecipes.length; i++){ %>
 					<% if(i < foundRecipes.length && i % 3 === 0 ) { %>
-						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>" style="padding:40%;">
-							<div class="individualRecipe" >
-
-								<div class="title"><%= foundRecipes[i].title %> </div>
-								<img src="<%= foundRecipes[i].image_link%>">
+						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
+							<div class="individualRecipe">
+									<img src="<%= foundRecipes[i].image_link%>">
+									<div class="title"><%= foundRecipes[i].title %> </div>
+									<a href="/">
+										<div class="favorite"></div>
+									</a>
 							</div>
-
 						</a>
 						<!-- individual recipe -->
 					<% } %>
