@@ -12,9 +12,17 @@
 					<% if(i < foundRecipes.length && i % 3 === 0 ) { %>
 						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
 							<div class="individualRecipe" >
+
+
+								<a href="/" style="position:relative; height=100%; width:100%; padding-left:40%;">
+									<div class="favorite">aaa</div>
+								</a>
+
+
 								<div class="title"><%= foundRecipes[i].title %> </div>
 								<img src="<%= foundRecipes[i].image_link%>">
 							</div>
+
 						</a>
 						<!-- individual recipe -->
 					<% } %>

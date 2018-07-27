@@ -31,7 +31,8 @@ var category = req.params.category
 
 
 exports.recipeHowto = function(req, res){
-	console.log(req.params.id)
+	// console.log(req.params.id)
+	//find recipe instructions with id
 	res.render("recipeHowto", { recipeId: req.params.id})
 }
 
