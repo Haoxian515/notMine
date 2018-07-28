@@ -36,8 +36,9 @@ exports.recipeHowto = function(req, res){
 	res.render("recipeHowto", { recipeId: req.params.id})
 }
 
-exports.postToFavorites = function(req, res){
+exports.postToFavorites = function(req, res, next){
 	console.log("post to fovarites works")
+	res.end()
 }
 
 exports.displayAPI = function(req, res){
