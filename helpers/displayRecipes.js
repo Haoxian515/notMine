@@ -37,7 +37,7 @@ exports.recipeHowto = function(req, res){
 }
 
 exports.postToFavorites = function(req, res, next){
-	console.log("post to fovarites works")
+	console.log("post to favorites displa recipesroute")
 	res.end()
 }
 
