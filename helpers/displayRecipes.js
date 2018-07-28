@@ -1,4 +1,5 @@
-var Recipe = require("../models/recipesSchema");
+var Recipe 	= require("../models/recipesSchema"),
+	User 	= require("../models/userSchema")	
 
 // exports.getDrinkRecipes = function(req, res){
 
@@ -24,7 +25,7 @@ var category = req.params.category
 			res.redirect("/")
 		}else{
 			// console.log(foundRecipe)
-			res.render("recipes", {foundRecipes:foundRecipes })
+			res.render("recipes", {foundRecipes:foundRecipes, currentUser: req.user })
 		}
 	})
 }
@@ -36,8 +37,45 @@ exports.recipeHowto = function(req, res){
 	res.render("recipeHowto", { recipeId: req.params.id})
 }
 
+
+// Cat.findById(req.params.id, function(err, cat){
+// 	if(err){
+// 		res.redirect("/")
+// 	}else{
+// 		Comment.create(req.body.comment, function(err, comment){
+// 			if(err){
+// 				console.log(err)
+// 			}else{
+// 				comment.author.id = req.user._id;
+// 				comment.author.userName = req.user.username;
+// 				// console.log(comment)
+// 				// console.log(comment)
+// 				comment.save()
+				
+// 				cat.comments.push(comment.id)
+// 				cat.save()
+
+// 				// console.log(cat)
+// 				res.redirect("/cats/" + cat._id)
+// 			}
+// 		});
+// 	}
+// });
 exports.postToFavorites = function(req, res, next){
 	console.log("post to favorites displa recipesroute")
+	// console.log(req.user._id)
+	console.log(req.body.recipeID)
+	var recipeid = req.body.recipeID
+	User.findById(req.user._id, function(err, foundUser){
+		if(err){
+			console.log(err)
+		}else{
+			foundUser.favorites.push(recipeid)
+			console.log(foundUser)
+			foundUser.save()
+		}
+
+	})
 	res.end()
 }
 

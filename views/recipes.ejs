@@ -15,12 +15,13 @@
 									<img src="<%= foundRecipes[i].image_link%>">
 									<div class="title"><%= foundRecipes[i].title %> </div>
 									<!-- <a href="/"> -->
-										<a onclick="myFunction('<%= foundRecipes[i].id %>')">
-											<!-- <button id="target" style="width:50px; height:50px; background-color:red;"> -->
-												<i id="addToFavorite" class="fas fa-star fa-3x favorite2"></i>
-											<!-- </button> -->
-										</a>
-
+										<% if (typeof currentUser != 'undefined'){ %> 
+											<a onclick="myFunction('<%= foundRecipes[i].id %>')">
+												<!-- <button id="target" style="width:50px; height:50px; background-color:red;"> -->
+													<i id="addToFavorite" class="fas fa-star fa-3x favorite2"></i>
+												<!-- </button> -->
+											</a>
+										<% } %>
 									<!-- </a> -->
 							</div>
 						</a>

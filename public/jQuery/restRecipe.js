@@ -16,7 +16,7 @@ function myFunction(recipeID){
 
 	$.post("/recipes", {recipeID: recipeID})
 	.then(function(){
-		console.log("jquery post")
+		// console.log("jquery post")
 	})
 	.catch(function(err){
 		console.log(err)
