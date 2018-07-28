@@ -79,6 +79,19 @@ exports.postToFavorites = function(req, res, next){
 	res.end()
 }
 
+//favorites
+exports.favorites = function(req, res){
+	console.log("favorites page")
+	// res.render("favorites")
+	User.findById(req.user._id, function(err, foundUser){
+		if(err){
+			console.log(err)
+		}else{
+			res.send(foundUser.favorites)
+		}
+	})
+}
+
 exports.displayAPI = function(req, res){
 
 console.log(req.params.category)

@@ -6,6 +6,7 @@ var Recipe 	= require("../models/recipesSchema"),
 
 router.get("/recipes/:category", helpers.displayRecipes)
 router.post("/recipes", helpers.postToFavorites)
+router.get("/recipes/user/favorites", helpers.favorites)
 
 router.get("/recipes/:category/:id", helpers.recipeHowto)
 
