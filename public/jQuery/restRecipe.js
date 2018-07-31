@@ -14,7 +14,6 @@ $(document).ready(function(){
 
 function myFunction(recipeID){
 	// console.log( "Favorite recipe" );
-	console.log(recipeID)
 	console.log("recipe favorited")
 	$.post(postUrl, {recipeID: recipeID})
 	.then(function(){

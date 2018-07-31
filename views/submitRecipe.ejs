@@ -1,1 +1,58 @@
+<% include partials/header %>
+
 submit new recipe form
+
+
+<!--   title: String,
+  description: String,
+  category:String,
+  instructions:[{
+  	type:String
+  }],
+  ingredients: [{
+    type:String
+  }],
+  image_link: String,
+  author: {
+    type:String,
+    default: "No Author"
+  },
+  recipe_url:String,
+  recipe_group:String,
+  postDate:{
+    type: Date,
+    default: Date.now
+  } -->
+
+<div style="width:40%; margin: 0 auto;">
+<form >
+
+	<div style="display:flex; flex-direction:column">
+
+		<input type="text" name="title" value="Title">
+
+		<input type="text" name="description" value="Description">
+
+		<input type="text" name="category" value="Category">
+
+		<div>
+			<input type="text" name="ingredients" value="Ingredients">
+			<a onclick="appendForm()">add</a>
+		</div>
+
+		<input type="text" name="instructions" value="Instructions">
+
+		<input type="text" name="image" value="Image">
+
+
+
+	</div>
+
+
+</form>
+</div>
+<script type="text/javascript" src="/jQuery/scripts.js"></script>
+
+
+
+<% include partials/footer %>
