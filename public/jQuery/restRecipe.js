@@ -1,10 +1,12 @@
 /* global $ */
 
+var postUrl = "/user/addToFavorites"
+
 $(document).ready(function(){
 
 	$( "#addToFavorite" ).click(function() {
 	  // console.log( "Favorite recipe" );
-	  console.log($("#columnOne").text())
+	  // console.log($("#columnOne").text())
 	});
 
 
@@ -13,8 +15,8 @@ $(document).ready(function(){
 function myFunction(recipeID){
 	// console.log( "Favorite recipe" );
 	console.log(recipeID)
-
-	$.post("/recipes", {recipeID: recipeID})
+	console.log("recipe favorited")
+	$.post(postUrl, {recipeID: recipeID})
 	.then(function(){
 		// console.log("jquery post")
 	})
