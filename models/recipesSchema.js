@@ -14,7 +14,10 @@ var RecipeSchema = new mongoose.Schema({
     type:String
   }],
   image_link: String,
-  rating: Number,
+  author: {
+    type:String,
+    default: "No Author"
+  },
   recipe_url:String,
   recipe_group:String,
   postDate:{
