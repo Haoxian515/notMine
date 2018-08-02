@@ -38,6 +38,11 @@ a:hover{
 
 }
 
+#ingredientsList:hover{
+	color:red;
+	transform:scale(1);
+}
+
 
 header nav li{
 	margin:0 15px;

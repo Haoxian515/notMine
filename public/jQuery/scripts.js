@@ -8,5 +8,7 @@ $(document).ready(function(){
 function appendForm(){
 
 	console.log("appending form!")
+	$('#ingredientsList').append('<input type="text" name="ingredients" value="Ingredients" />');
+
 
 }
