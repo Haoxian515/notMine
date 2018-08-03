@@ -25,32 +25,38 @@ submit new recipe form
   } -->
 
 <div style="width:40%; margin: 0 auto;">
-<form >
+	<form action="/user/submit" method="POST">
 
-	<div style="display:flex; flex-direction:column">
+		<div style="display:flex; flex-direction:column; justify-content: space-evenly" >
 
-		<input type="text" name="title" value="Title">
+			<input type="text" name="title" value="Title">
 
-		<input type="text" name="description" value="Description">
+			<input type="text" name="description" value="Description">
 
-		<input type="text" name="category" value="Category">
+			<input type="text" name="category" value="Category">
 
-		<div id="ingredientsList" style="display:flex; flex-direction:column">
-			<input type="text" name="ingredients" value="Ingredients">
+			<div id="ingredientsList" style="display:flex; flex-direction:column">
+				<input type="text" name="ingredients" value="Ingredients">
 
-			<a  id="ingredientsList" onclick="appendForm()">add</a>
+				<a onclick="appendForm('ingredients')">add more ingredients</a>
+			</div>
+
+			<div id="instructionsList" style="display:flex; flex-direction:column">
+				<input type="text" name="instructions" value="Instructions">
+
+				<a onclick="appendForm('instructions')">add more instructions</a>
+			</div>
+
+			<input type="text" name="image" value="Image">
+
+
 		</div>
 
-		<input type="text" name="instructions" value="Instructions">
+		<div>
+			<button > Submit recipe</button>
+		</div>
 
-		<input type="text" name="image" value="Image">
-
-
-
-	</div>
-
-
-</form>
+	</form>
 </div>
 <script type="text/javascript" src="/jQuery/scripts.js"></script>
 

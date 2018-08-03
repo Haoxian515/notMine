@@ -1,4 +1,5 @@
-var User 	= require("../models/userSchema")	
+var User 	= require("../models/userSchema"),
+	Recipe 	= require("../models/recipesSchema")
 
 exports.postToFavorites = function(req, res, next){
 	console.log("post to favorites displa recipesroute")
@@ -41,7 +42,49 @@ exports.favorites = function(req, res){
 }
 
 
-exports.submitRecipe = function(req, res){
-	res.render("submitRecipe")
+exports.submitRecipeForm = function(req, res){
+	res.render("submitRecipe", {currentUser: req.user})
 }
+
+exports.submitRecipe = function(req, res){
+
+	// console.log(req.body)
+	var newRecipe = 
+		{ 
+		 title: req.body.title,
+		 description: req.body.description,
+		 category: req.body.category,
+		 ingredients: req.body.ingredients,
+		 instructions: req.body.instructions,
+		 image: req.body.image 
+		}
+
+	Recipe.create(newRecipe, function(err, recipe){
+		if(err){
+			console.log(err)
+		}else{
+			recipe.save()
+			res.redirect("/recipes/drinks")
+		}
+
+	})
+
+	// res.end()	
+}
+
+
+
+
 module.exports = exports;
+
+
+
+
+
+
+
+
+
+
+
+

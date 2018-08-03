@@ -1,0 +1,11 @@
+
+exports.isLoggedIn = function(req, res, next){
+	console.log("login check")
+	if(req.isAuthenticated()){
+		return next()
+	}
+	res.send("youre not logged in")
+	// res.redirect("back")
+}
+
+module.exports = exports;

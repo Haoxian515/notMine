@@ -32,15 +32,15 @@ a{
 a:visited{
 	color:transparent;
 }
-a:hover{
+a .recipeLink:hover{
 	transform: scale(1.10);
 	transition: 200ms ease all;
 
 }
 
-#ingredientsList:hover{
-	color:red;
-	transform:scale(1);
+
+input{
+	margin-top: 1vw;
 }
 
 
