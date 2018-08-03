@@ -58,18 +58,17 @@ exports.submitRecipe = function(req, res){
 		 instructions: req.body.instructions,
 		 image_link: req.body.image
 		}
+		console.log(newRecipe)
+	// Recipe.create(newRecipe, function(err, recipe){
+	// 	if(err){
+	// 		console.log(err)
+	// 	}else{
+	// 		recipe.save()
+	// 		res.redirect("/recipes/drinks")
+	// 	}
 
-	Recipe.create(newRecipe, function(err, recipe){
-		if(err){
-			console.log(err)
-		}else{
-			recipe.save()
-			res.redirect("/recipes/drinks")
-		}
+	// })
 
-	})
-
-	// res.end()	
 }
 
 

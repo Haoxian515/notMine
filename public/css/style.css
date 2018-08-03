@@ -38,8 +38,14 @@ a .recipeLink:hover{
 
 }
 
+.form-grid{
+	display:flex;
+	flex-direction:column;
+	justify-content:
+	space-evenly
+}
 
-input{
+.form-grid input ,select{
 	margin-top: 1vw;
 }
 
