@@ -56,7 +56,7 @@ exports.submitRecipe = function(req, res){
 		 category: req.body.category,
 		 ingredients: req.body.ingredients,
 		 instructions: req.body.instructions,
-		 image: req.body.image 
+		 image_link: req.body.image
 		}
 
 	Recipe.create(newRecipe, function(err, recipe){

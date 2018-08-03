@@ -3,14 +3,14 @@ var Recipe 	= require("../models/recipesSchema"),
 
 exports.displayRecipes = function(req, res){
 
-// console.log(req.params.category)
+console.log(req.params.category)
 var category = req.params.category
-	Recipe.find({'category': category}, function(err, foundRecipes){
+	Recipe.find({ 'category': category.toLowerCase() }, function(err, foundRecipes){
 		if(err){
 			console.log(err)
 			res.redirect("/")
 		}else{
-			// console.log(foundRecipe)
+			console.log(foundRecipes)
 			res.render("recipes", {foundRecipes:foundRecipes, currentUser: req.user })
 		}
 	})
