@@ -45,7 +45,7 @@ a .recipeLink:hover{
 	space-evenly
 }
 
-.form-grid input ,select{
+.form-grid input ,select, button{
 	margin-top: 1vw;
 }
 

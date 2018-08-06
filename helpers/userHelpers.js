@@ -1,6 +1,10 @@
 var User 	= require("../models/userSchema"),
 	Recipe 	= require("../models/recipesSchema")
 
+var mongoose = require("mongoose")
+mongoose.Promise = global.Promise;
+
+
 exports.postToFavorites = function(req, res, next){
 	console.log("post to favorites displa recipesroute")
 	// console.log(req.user._id)
@@ -26,19 +30,69 @@ exports.postToFavorites = function(req, res, next){
 }
 
 //favorites ejs
+function appendObject(){
+
+}
+
 exports.favorites = function(req, res){
 	console.log("favorites page")
-	// res.render("favorites")
-	if(typeof req.user == "undefined"){
-		res.redirect("/")
-	}
-	User.findById(req.user.id, function(err, foundUser){
-		if(err){
-			console.log(err)
-		}else{
-			res.send(foundUser.favorites)
-		}
+
+	//test id
+	var testid = "5b5fa862a1cc0371697eb56b"
+
+	// var testRecipeArray = ["5b5f9fd610e52171651512ee",
+	// "5b5f9fd610e52171651512ee",
+	// "5b5f9fd610e52171651512ee",
+	// "5b5f9fd610e52171651512ee",
+	// "5b5f9fd610e52171651512ee",
+	// "5b5f9fd610e52171651512ee",
+	// "5b5f9fd610e52171651512ef",
+	// "5b5f9fd610e52171651512f6",
+	// "5b5f9fd610e52171651512ee",
+	// "5b5f9fd610e52171651512ee"]
+
+
+	// var favoritesIds = []
+	// var favoritedRecipes = []
+	// test2
+
+	// 	User.findById(testid, function(err, foundUser){
+	// 	if(err){
+	// 		console.log(err)
+	// 	}else{
+	// 		// res.send(foundUser.favorites)
+	// 		favoritesIds = foundUser.favorites
+	// 	}
+	// })
+	User.findById(testid)
+	.exec()
+	.then( (foundUser) => {
+		// console.log(foundUser.favorites)	
+		Recipe.find({
+			'_id' : {
+				$in: foundUser.favorites
+			}
+		}, function(err, recipes){
+			if(err){
+				console.log(err)
+			}else{
+				res.render("recipes", {foundRecipes: recipes})
+			}
+		})	
 	})
+	.catch( (err) => function(){
+		console.log(err)
+	})
+	// Recipe.find(
+	// 	{
+	//     '_id': { $in: 
+	//     	testRecipeArray
+	//     }
+	// }, function(err, docs){
+	//      console.log(docs);
+	//      // favoritedRecipes = docs
+	//      res.render("recipes", {foundRecipes: docs})
+	// 	});
 }
 
 
