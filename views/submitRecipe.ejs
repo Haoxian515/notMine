@@ -1,0 +1,70 @@
+<% include partials/header %>
+
+
+<!--   title: String,
+  description: String,
+  category:String,
+  instructions:[{
+  	type:String
+  }],
+  ingredients: [{
+    type:String
+  }],
+  image_link: String,
+  author: {
+    type:String,
+    default: "No Author"
+  },
+  recipe_url:String,
+  recipe_group:String,
+  postDate:{
+    type: Date,
+    default: Date.now
+  } -->
+
+<div style="width:40%; margin: 0 auto;">
+	<form action="/user/submit" method="POST">
+
+		<div class="form-grid">
+
+			<input type="text" name="title" placeholder="Title">
+
+			<input type="text" name="description" placeholder="Description">
+
+			<select name="category">
+			  <optgroup label="Category">
+			    <option value="food">food</option>
+			    <option value="drink">drink</option>
+			    <option value="dessert">dessert</option>
+			  </optgroup>
+			</select>
+
+
+			<div id="ingredientsList" style="display:flex; flex-direction:column">
+				<input type="text" name="ingredients" placeholder="Ingredients">
+			</div>
+			<a onclick="appendForm('ingredients')">add more ingredients</a>
+
+
+			<div id="instructionsList" style="display:flex; flex-direction:column">
+				<input type="text" name="instructions" placeholder="Instructions">
+			</div>
+			<a onclick="appendForm('instructions')">add more instructions</a>
+
+
+			<input type="text" name="image" placeholder="Image Link">
+
+
+		</div>
+
+		<!-- <div> -->
+			<button > Submit recipe</button>
+		<!-- </div> -->
+
+	</form>
+</div>
+<script type="text/javascript" src="/jQuery/scripts.js"></script>
+
+
+
+<% include partials/footer %>
