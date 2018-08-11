@@ -1,0 +1,26 @@
+<% include partials/header %>
+
+
+<section>
+
+	<div>
+		<%= recipe.title %>	
+		<br>
+		<br>
+		<%= recipe.description %>	
+		<br>
+		<br>
+		<% for(var ingredient of recipe.ingredients) { %>
+			<%= ingredient %>
+			<br>
+		<% } %>
+		<br>
+		<br>
+		<% for(var instruction of recipe.instructions) { %>
+			<%= instruction %>
+			<br>
+		<% } %>
+	</div>
+</section>
+
+<% include partials/footer %>

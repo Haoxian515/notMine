@@ -1,33 +1,30 @@
-<% include partials/header%>
+<% include partials/header %>
 
 <!-- 0 1 2 3 4 5 6 7 8 -->
 <!-- 3 3 3 3 3 3 3 3 3 -->
 <!-- 0 1 2 0 1 2 0 1 2 -->
 <section>
 
-	<div style="display:flex; flex-direction: row; flex-wrap: wrap;justify-content:center; width:90vw;">
+	<div style="display:flex; flex-direction: row; flex-wrap: wrap;justify-content:center;">
 
 			<div class="threeColumns">
 				<% for(var i = 0; i < foundRecipes.length; i++){ %>
 					<% if(i < foundRecipes.length && i % 3 === 0 ) { %>
+						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
 							<div class="individualRecipe">
-								<img src="<%= foundRecipes[i].image_link %>" style="width:100%; height:50%;">
-
-								<%= foundRecipes[i].title %>
-									<div>Ingredients:  
-										<% foundRecipes[i].ingredients.forEach(function(ingredient){ %>
-											<%= ingredient %> 
-											<br>
-										<% }) %> 
-									</div>
-
-									<div>Instructions:  
-										<% foundRecipes[i].instructions.forEach(function(instruction){ %>
-											<%= instruction %> 
-											<br>
-										<% }) %> 
-									</div>
+									<img src="<%= foundRecipes[i].image_link%>">
+									<div class="title"><%= foundRecipes[i].title %> </div>
+									<!-- <a href="/"> -->
+										<% if (typeof currentUser != 'undefined'){ %> 
+											<a class="recipeLink "onclick="myFunction('<%= foundRecipes[i].id %>')">
+												<!-- <button id="target" style="width:50px; height:50px; background-color:red;"> -->
+													<i id="addToFavorite" class="fas fa-star fa-3x favorite2"></i>
+												<!-- </button> -->
+											</a>
+										<% } %>
+									<!-- </a> -->
 							</div>
+						</a>
 						<!-- individual recipe -->
 					<% } %>
 					<!-- column 1 logic -->
@@ -39,62 +36,60 @@
 			<div class="threeColumns">
 				<% for(var i = 0; i < foundRecipes.length; i++){ %>
 					<% if(i < foundRecipes.length && i % 3 === 1 ) { %>
+						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
 							<div class="individualRecipe">
-								<img src="<%= foundRecipes[i].image_link %>" style="width:100%; height:50%;">
-
-								<%= foundRecipes[i].title %>
-									<div>Ingredients:  
-										<% foundRecipes[i].ingredients.forEach(function(ingredient){ %>
-											<%= ingredient %> 
-											<br>
-										<% }) %> 
-									</div>
-
-									<div>Instructions:  
-										<% foundRecipes[i].instructions.forEach(function(instruction){ %>
-											<%= instruction %> 
-											<br>
-										<% }) %> 
-									</div>
+									<img src="<%= foundRecipes[i].image_link%>">
+									<div class="title"><%= foundRecipes[i].title %> </div>
+									<!-- <a href="/"> -->
+										<% if (typeof currentUser != 'undefined'){ %> 
+											<a onclick="myFunction('<%= foundRecipes[i].id %>')">
+												<!-- <button id="target" style="width:50px; height:50px; background-color:red;"> -->
+													<i id="addToFavorite" class="fas fa-star fa-3x favorite2"></i>
+												<!-- </button> -->
+											</a>
+										<% } %>
+									<!-- </a> -->
 							</div>
+						</a>
 						<!-- individual recipe -->
 					<% } %>
-					<!-- column 2 logic -->
+					<!-- column 1 logic -->
 			<!-- inner loop -->
 				<% } %>
 			</div>
-			<!-- column 2 -->
+			<!-- column 1 -->
 
 			<div class="threeColumns">
 				<% for(var i = 0; i < foundRecipes.length; i++){ %>
 					<% if(i < foundRecipes.length && i % 3 === 2 ) { %>
+						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
 							<div class="individualRecipe">
-								<img src="<%= foundRecipes[i].image_link %>" style="width:100%; height:50%;">
-
-								<%= foundRecipes[i].title %>
-									<div>Ingredients:  
-										<% foundRecipes[i].ingredients.forEach(function(ingredient){ %>
-											<%= ingredient %> 
-											<br>
-										<% }) %> 
-									</div>
-
-									<div>Instructions:  
-										<% foundRecipes[i].instructions.forEach(function(instruction){ %>
-											<%= instruction %> 
-											<br>
-										<% }) %> 
-									</div>
+									<img src="<%= foundRecipes[i].image_link%>">
+									<div class="title"><%= foundRecipes[i].title %> </div>
+									<!-- <a href="/"> -->
+										<% if (typeof currentUser != 'undefined'){ %> 
+											<a class="recipeLink" onclick="myFunction('<%= foundRecipes[i].id %>')">
+												<!-- <button id="target" style="width:50px; height:50px; background-color:red;"> -->
+													<i id="addToFavorite" class="fas fa-star fa-3x favorite2"></i>
+												<!-- </button> -->
+											</a>
+										<% } %>
+									<!-- </a> -->
 							</div>
+						</a>
 						<!-- individual recipe -->
 					<% } %>
-					<!-- column 3 logic -->
+					<!-- column 1 logic -->
 			<!-- inner loop -->
 				<% } %>
 			</div>
-			<!-- column 3 -->
+			<!-- column 1 -->
  
 	</div>
 	<!-- row of 3 columns -->
 </section>
+
+<script type="text/javascript" src="/jQuery/restRecipe.js"></script>
+
+
 

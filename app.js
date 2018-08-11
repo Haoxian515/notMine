@@ -15,8 +15,11 @@ var bodyParser 		= require("body-parser"),
 
 
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
+app.use(express.static(__dirname + "/views"))
+
 const PORT_NUM = 3000;
+
 app.set("view engine", "ejs");
 
 mongoose.connect('mongodb://localhost:27017/notMyRecipes', {useNewUrlParser: true})
@@ -82,7 +85,7 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.get("/", function(req, res){
-	console.log(req.user)
+	// console.log(req.user)
 	res.render("index", {currentUser: req.user})
 })
 
