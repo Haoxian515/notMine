@@ -38,7 +38,7 @@ exports.favorites = function(req, res){
 	console.log("favorites page")
 
 	//test id
-	var testid = "5b5fa862a1cc0371697eb56b"
+	// var testid = "5b5fa862a1cc0371697eb56b"
 
 	// var testRecipeArray = ["5b5f9fd610e52171651512ee",
 	// "5b5f9fd610e52171651512ee",
@@ -64,7 +64,7 @@ exports.favorites = function(req, res){
 	// 		favoritesIds = foundUser.favorites
 	// 	}
 	// })
-	User.findById(testid)
+	User.findById(req.user)
 	.exec()
 	.then( (foundUser) => {
 		// console.log(foundUser.favorites)	
@@ -76,7 +76,7 @@ exports.favorites = function(req, res){
 			if(err){
 				console.log(err)
 			}else{
-				res.render("recipes", {foundRecipes: recipes})
+				res.render("recipes", {foundRecipes: recipes, currentUser: req.user})
 			}
 		})	
 	})
@@ -113,15 +113,15 @@ exports.submitRecipe = function(req, res){
 		 image_link: req.body.image
 		}
 		console.log(newRecipe)
-	// Recipe.create(newRecipe, function(err, recipe){
-	// 	if(err){
-	// 		console.log(err)
-	// 	}else{
-	// 		recipe.save()
-	// 		res.redirect("/recipes/drinks")
-	// 	}
+	Recipe.create(newRecipe, function(err, recipe){
+		if(err){
+			console.log(err)
+		}else{
+			recipe.save()
+			res.redirect("/recipes/drinks")
+		}
 
-	// })
+	})
 
 }
 
