@@ -4,7 +4,10 @@ var mongoose = require('mongoose')
 
 var RecipeSchema = new mongoose.Schema({
 
-  title: String,
+  title: { 
+      type: String,
+      unique: true 
+    },
   description: String,
   category:String,
   instructions:[{

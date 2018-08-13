@@ -112,7 +112,7 @@ exports.submitRecipe = function(req, res){
 		 instructions: req.body.instructions,
 		 image_link: req.body.image
 		}
-		console.log(newRecipe)
+		// console.log(newRecipe)
 	Recipe.create(newRecipe, function(err, recipe){
 		if(err){
 			console.log(err)

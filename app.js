@@ -41,7 +41,9 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //MAIN
-// pushtodb()
+pushtodb()
+
+
 
 
 
@@ -70,8 +72,9 @@ app.listen(PORT_NUM, function(){
 
 function pushtodb(){
     // push to db
-    // var inputFile='drinks_test.csv';
-    var inputFile='dessert_recipes.csv';
+    console.log("pushing to db!")
+    var inputFile='drinks_test.csv';
+    // var inputFile='dessert_recipes.csv';
     var parser = parse({delimiter: ','}, function (err, data) {
         // console.log(data[1][3].split("\r\n"))
         // console.log(data[1]);
@@ -92,7 +95,7 @@ function pushtodb(){
                 recipe_group: line[5],
                 recipe_url: line[6]
             };
-
+            
             Recipe.create(newRecipe, function(err, recipe){
                 if(err){
                     console.log(err)
@@ -101,10 +104,8 @@ function pushtodb(){
                 }
             })
             // save to mongo
-        // doSomething(line).then(function() {
         //   // when processing finishes invoke the callback to move to the next one
           callback();
-        // });
       })
     });
     fs.createReadStream(inputFile).pipe(parser);

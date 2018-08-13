@@ -24,7 +24,7 @@ exports.recipeHowto = function(req, res){
 		if(err){
 			console.log(err)
 		}else{
-			console.log(foundRecipe)
+			// console.log(foundRecipe)
 			res.render("recipeHowto", {recipe: foundRecipe})
 		}
 	})
