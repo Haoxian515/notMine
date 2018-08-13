@@ -23,7 +23,18 @@ var RecipeSchema = new mongoose.Schema({
   postDate:{
     type: Date,
     default: Date.now
-  }
+  },
+// name: {
+//   type: String,
+//   validate: {
+//     validator: function(v, cb) {
+//       User.find({name: v}, function(err,docs){
+//          cb(docs.length == 0);
+//       });
+//     },
+//     message: 'User already exists!'
+//   }
+// }
 
 });
 
