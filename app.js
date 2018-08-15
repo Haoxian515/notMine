@@ -98,7 +98,8 @@ function pushtodb(){
             
             Recipe.create(newRecipe, function(err, recipe){
                 if(err){
-                    console.log(err)
+                    // console.log(err)
+                    console.log("recipe title already exists!")
                 }else{
                     console.log("saved to db")
                 }
