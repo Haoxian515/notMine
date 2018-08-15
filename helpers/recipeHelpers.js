@@ -10,7 +10,7 @@ var category = req.params.category
 			console.log(err)
 			res.redirect("/")
 		}else{
-			console.log(foundRecipes)
+			// console.log(foundRecipes)
 			res.render("recipes", {foundRecipes:foundRecipes, currentUser: req.user })
 		}
 	})
@@ -20,7 +20,16 @@ var category = req.params.category
 exports.recipeHowto = function(req, res){
 	// console.log(req.params.id)
 	//find recipe instructions with id
-	res.render("recipeHowto", { recipeId: req.params.id})
+	Recipe.findById(req.params.id, function(err, foundRecipe){
+		if(err){
+			console.log(err)
+		}else{
+			// console.log(foundRecipe)
+			res.render("recipeHowto", {recipe: foundRecipe})
+		}
+	})
+
+	// res.render("recipeHowto", { recipeId: req.params.id})
 }
 
 
