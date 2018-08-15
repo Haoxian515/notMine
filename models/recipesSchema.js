@@ -4,7 +4,10 @@ var mongoose = require('mongoose')
 
 var RecipeSchema = new mongoose.Schema({
 
-  title: String,
+  title: { 
+      type: String,
+      unique: true 
+    },
   description: String,
   category:String,
   instructions:[{
@@ -23,7 +26,18 @@ var RecipeSchema = new mongoose.Schema({
   postDate:{
     type: Date,
     default: Date.now
-  }
+  },
+// name: {
+//   type: String,
+//   validate: {
+//     validator: function(v, cb) {
+//       User.find({name: v}, function(err,docs){
+//          cb(docs.length == 0);
+//       });
+//     },
+//     message: 'User already exists!'
+//   }
+// }
 
 });
 

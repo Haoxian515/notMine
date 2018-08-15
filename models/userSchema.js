@@ -11,7 +11,8 @@ var userSchema = new mongoose.Schema({
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "Recipe"
 		}
-	]
+	],
+
 })
 
 userSchema.plugin(passportLocalMongoose);

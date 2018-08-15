@@ -10,7 +10,7 @@
 			<div class="threeColumns">
 				<% for(var i = 0; i < foundRecipes.length; i++){ %>
 					<% if(i < foundRecipes.length && i % 3 === 0 ) { %>
-						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
+						<a href="/recipes/<%= foundRecipes[i].category %>/<%= foundRecipes[i]._id %>">
 							<div class="individualRecipe">
 									<img src="<%= foundRecipes[i].image_link%>">
 									<div class="title"><%= foundRecipes[i].title %> </div>
@@ -36,7 +36,7 @@
 			<div class="threeColumns">
 				<% for(var i = 0; i < foundRecipes.length; i++){ %>
 					<% if(i < foundRecipes.length && i % 3 === 1 ) { %>
-						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
+						<a href="/recipes/<%= foundRecipes[i].category %>/<%= foundRecipes[i]._id %>">
 							<div class="individualRecipe">
 									<img src="<%= foundRecipes[i].image_link%>">
 									<div class="title"><%= foundRecipes[i].title %> </div>
@@ -62,7 +62,7 @@
 			<div class="threeColumns">
 				<% for(var i = 0; i < foundRecipes.length; i++){ %>
 					<% if(i < foundRecipes.length && i % 3 === 2 ) { %>
-						<a href="/recipes/drinks/<%= foundRecipes[i]._id %>">
+						<a href="/recipes/<%= foundRecipes[i].category %>/<%= foundRecipes[i]._id %>">
 							<div class="individualRecipe">
 									<img src="<%= foundRecipes[i].image_link%>">
 									<div class="title"><%= foundRecipes[i].title %> </div>
