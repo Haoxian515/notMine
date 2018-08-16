@@ -1,10 +1,33 @@
 var User 	= require("../models/userSchema"),
-	Recipe 	= require("../models/recipesSchema")
+	Recipe 	= require("../models/recipesSchema"),
+	multer	= require("multer"),
+	path	= require("path")
 
 var mongoose = require("mongoose")
-mongoose.Promise = global.Promise;
+
+//Set Storage Engine
+const storage = multer.diskStorage({
+    destination: "./public/testStorage/",
+    filename: function(req, file, cb){
+        //callback with fieldname concat file extension
+        cb(null, file.originalname + path.extname(file.originalname))
+    }
+});
+
+//Init Upload variable
+const upload = multer({
+    storage: storage
+    // limits:{
+    // 	fileSize: 10
+    // },
+    //fileFilter: function(req, file, cb){
+	// 
+    // }
+}).single("fileName")
 
 
+
+//EXPORTS
 exports.postToFavorites = function(req, res, next){
 	console.log("post to favorites displa recipesroute")
 	// console.log(req.user._id)
@@ -125,7 +148,23 @@ exports.submitRecipe = function(req, res){
 
 }
 
+exports.uploadPage = function(req, res){
+	res.render("upload", {currentUser: req.user})
+}
 
+exports.uploadFile = function(req, res){
+	// res.render("upload", {currentUser: req.user})
+	// console.log("upload pagepagepagepagepagepagepagepagepagepage.")
+	upload(req, res, (err) => {
+		if(err){
+			console.log("erroring uploading file")
+		}else{
+			console.log(req.file)
+			res.render("upload")
+		}
+
+	})
+}
 
 
 module.exports = exports;
