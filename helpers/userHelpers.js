@@ -4,14 +4,13 @@ var User 	= require("../models/userSchema"),
 	path	= require("path")
 
 var mongoose = require("mongoose")
-mongoose.Promise = global.Promise;
 
 //Set Storage Engine
 const storage = multer.diskStorage({
     destination: "./public/testStorage/",
     filename: function(req, file, cb){
         //callback with fieldname concat file extension
-        cb(null, file.fieldname + path.extname(file.originalname))
+        cb(null, file.originalname + path.extname(file.originalname))
     }
 });
 
@@ -161,6 +160,7 @@ exports.uploadFile = function(req, res){
 			console.log("erroring uploading file")
 		}else{
 			console.log(req.file)
+			res.render("upload")
 		}
 
 	})

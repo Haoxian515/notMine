@@ -22,21 +22,7 @@ app.use(express.static(__dirname + "/views"))
 const PORT_NUM = 3000;
 
 // //Set View engine
-// app.set("view engine", "ejs");
-
-// //Set Storage Engine
-// const storage = multer.diskStorage({
-//     destination: "./public/testStorage/",
-//     filename: function(req, file, cb){
-//         //callback with fieldname concat file extension
-//         cb(null, file.fieldname + path.extname(file.originalname))
-//     }
-// });
-
-// //Init Upload variable
-// const upload = multer({
-//     storage: storage
-// }).single("fileName")
+app.set("view engine", "ejs");
 
 
 
@@ -86,7 +72,7 @@ app.listen(PORT_NUM, function(){
 function pushtodb(){
     // push to db
     console.log("pushing to db!")
-    var inputFile='drinks_test.csv';
+    var inputFile='./public/testStorage/drinks_test.csv';
     // var inputFile='dessert_recipes.csv';
     var parser = parse({delimiter: ','}, function (err, data) {
         // console.log(data[1][3].split("\r\n"))
