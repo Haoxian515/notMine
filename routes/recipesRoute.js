@@ -25,7 +25,7 @@ router.get("/recipes/:category/:id", recipeHelpers.recipeHowto)
 router.get("/user/submit", userHelpers.submitRecipeForm)
 router.get("/user/favorites", userHelpers.favorites)
 router.post("/user/submit",  userHelpers.submitRecipe)
-router.get("/user/upload", userHelpers.uploadPage)
+router.get("/user/upload", middleware.isAdmin, userHelpers.uploadPage)
 router.post("/user/upload", userHelpers.uploadFile)
 //temp without middleware
 
