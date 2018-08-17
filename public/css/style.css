@@ -94,14 +94,17 @@ section{
 
  	text-align: center;
  	/*background-color: #5ddd5d;*/
- 	width: 10%;
- 	height: 300px;
+ 	width: 30%;
+ 	height: 450px;
  	margin: 1%;
  	min-height: 20em;
  	min-width: 16em;
  	border-radius: 5%;
 
  	box-shadow: 0 0 1em;
+ }
+ .category h2{
+ 	margin-top:15%;
  }
 
  .category .upper{
