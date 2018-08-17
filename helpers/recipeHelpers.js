@@ -25,7 +25,7 @@ exports.recipeHowto = function(req, res){
 			console.log(err)
 		}else{
 			// console.log(foundRecipe)
-			res.render("recipeHowto", {recipe: foundRecipe})
+			res.render("recipeHowto", {currentUser: req.user, recipe: foundRecipe})
 		}
 	})
 
