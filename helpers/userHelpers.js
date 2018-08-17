@@ -102,6 +102,21 @@ exports.submitRecipeForm = function(req, res){
 
 exports.submitRecipe = function(req, res){
 
+	//check no values
+	if(
+	req.body.title 			 == "" 	||
+		req.body.description == ""	||
+		req.body.category	 == ""	||
+		req.body.ingredients.length > 0 ||
+		req.body.instructions.length > 0 ||
+		req.body.image 	== ""
+
+	){
+		console.log("empty space alert")
+		res.render("submitRecipe", {currentUser:req.user, errMessage:"Please fill out fields!"})
+	}
+
+
 	// console.log(req.body)
 	var newRecipe = 
 		{ 

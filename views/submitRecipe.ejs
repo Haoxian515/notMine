@@ -23,6 +23,9 @@
   } -->
 
 <div style="width:40%; margin: 0 auto;">
+	<% if(typeof errMessage != "undefined"){ %>
+		<%= errMessage %>
+	<% } %>
 	<form action="/user/submit" method="POST">
 
 		<div class="form-grid">
