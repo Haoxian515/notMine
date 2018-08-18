@@ -23,6 +23,9 @@
   } -->
 
 <div style="width:40%; margin: 0 auto;">
+	<% if(typeof errMessage != "undefined"){ %>
+		<%= errMessage %>
+	<% } %>
 	<form action="/user/submit" method="POST">
 
 		<div class="form-grid">
@@ -43,13 +46,17 @@
 			<div id="ingredientsList" style="display:flex; flex-direction:column">
 				<input type="text" name="ingredients" placeholder="Ingredients">
 			</div>
-			<a onclick="appendForm('ingredients')">add more ingredients</a>
+			<a onclick="appendForm('ingredients')">
+				<div class="ing-btn" >Add Ingredients!</div>
+			</a>
 
 
 			<div id="instructionsList" style="display:flex; flex-direction:column">
 				<input type="text" name="instructions" placeholder="Instructions">
 			</div>
-			<a onclick="appendForm('instructions')">add more instructions</a>
+			<a onclick="appendForm('instructions')">
+				<div class="ins-btn">Add Instructions!</div>
+			</a>
 
 
 			<input type="text" name="image" placeholder="Image Link">
@@ -58,7 +65,7 @@
 		</div>
 
 		<!-- <div> -->
-			<button > Submit recipe</button>
+			<button id="recipe-submit-btn">Submit recipe</button>
 		<!-- </div> -->
 
 	</form>
