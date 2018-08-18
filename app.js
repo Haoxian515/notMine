@@ -41,7 +41,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //MAIN
-// pushtodb()
+pushtodb()
 
 
 
