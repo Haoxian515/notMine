@@ -112,7 +112,8 @@ app.listen(PORT_NUM, function(){
 function pushtodb(){
     // push to db
     console.log("pushing to db!")
-    var inputFile='drinks_test.csv';
+    var inputFile="food_recipes.csv"
+    // var inputFile='drinks_test.csv';
     // var inputFile='dessert_recipes.csv';
     var parser = parse({delimiter: ','}, function (err, data) {
         // console.log(data[1][3].split("\r\n"))
