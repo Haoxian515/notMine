@@ -12,6 +12,7 @@ var bodyParser 		= require("body-parser"),
     passport		= require("passport"),
     localStrategy 	= require("passport-local"),
     authenticateRoute = require("./routes/authenticateRoute"),
+    apiRoutes       = require("./routes/api/apiRoute"),
     multer          = require("multer")
 
 
@@ -56,6 +57,8 @@ app.get("/", function(req, res){
 app.use("/", recipesRoute);
 
 app.use("/", authenticateRoute);
+
+app.use("/", apiRoutes);
 
 
 

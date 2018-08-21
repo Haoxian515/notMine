@@ -21,6 +21,9 @@
 	<h2> <a href="/">NOT MY RECIPES</a></h2>
 
 	<nav>
+				<form action="/api/search" method="get">
+					<input id="searchbar" type="text" name="searchbar" placeholder="Search ...">
+				</form>
 				<% if (typeof currentUser == 'undefined'){%>
 					<!-- <li> <a href="/user/submit"> Add new recipe temp</a> </li> -->
 
