@@ -5,16 +5,19 @@
 
 		<form action="/register" method="POST">
 			<div>
-				<input type="text" name="username" placeholder="Username">
+				<input id="username" type="text" name="username" placeholder="Username"> 
+			</div>
+			<span id="errmsg"></span>
+			<p></p>
+			<div>
+				<input id="password" type="text" name="password" placeholder="Password">
 			</div>
 			<p></p>
 			<div>
-				<input type="text" name="password" placeholder="Password">
-			</div>
-			<p></p>
-			<div>
-				<button > Sign up</button>
+				<button id="submitbtn"> Sign Up </button>
 			</div>
 		</form>
 	</div>
 </div>
+
+<%include partials/footer %>

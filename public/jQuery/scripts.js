@@ -1,8 +1,43 @@
 $(document).ready(function(){
 
 	console.log("Hello from scripts.js")
-	
 });
+
+// function testing(){
+	var warning = document.getElementById("errmsg")
+	var submitbutton = document.getElementById("submitbtn")
+	submitbutton.disabled = true;
+	username.addEventListener("keyup", function(event){
+
+		console.log(username.value)
+		console.log(username.value.length)
+		if(username.value.length < 6){
+			// console.log("less than 5")
+			warning.textContent = "Username needs to be more than 5 characters long!"
+		}else{
+			warning.textContent = ""
+			submitbutton.disabled = false;
+		}
+	})
+
+// 	})
+// }
+
+
+// var username = document.getElementById("username")
+// var warning = document.getElementById("warningmsg")
+// 	username.addEventListener("keyup", function(event){
+
+// 		console.log(username.value)
+// 		console.log(username.value.length)
+// 		if(username.value.length < 6){
+// 			// console.log("less than 5")
+// 			warning.textContent = "Username needs to be more than 5 characters long!"
+// 		}else{
+// 			warning.textContent = ""
+// 		}
+
+// 	})
 
 
 //searchbar manage search function
