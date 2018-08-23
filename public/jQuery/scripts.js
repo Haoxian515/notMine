@@ -4,21 +4,43 @@ $(document).ready(function(){
 });
 
 // function testing(){
-	var warning = document.getElementById("errmsg")
-	var submitbutton = document.getElementById("submitbtn")
+	var userwarning		= document.getElementById("errmsg")
+	var submitbutton	= document.getElementById("submitbtn")
+
+	var password		= document.getElementById("pass")
+	var pwwarning 		= document.getElementById("pwwarning")
+
+	// console.log(password)
 	submitbutton.disabled = true;
 	username.addEventListener("keyup", function(event){
 
-		console.log(username.value)
-		console.log(username.value.length)
 		if(username.value.length < 6){
 			// console.log("less than 5")
-			warning.textContent = "Username needs to be more than 5 characters long!"
-		}else{
-			warning.textContent = ""
+			userwarning.textContent = "Username needs to be more than 5 characters long!"
+
+		}
+		if(username.value.length < 6 && password.value.length < 6){
+			submitbutton.disabled = true
+
+		}else if(username.value.length >= 6 && password.value.length >= 6){
+			console.log(username.value)
+			userwarning.textContent = ""
 			submitbutton.disabled = false;
 		}
 	})
+
+	// password.addEventListener("keyup", function(event){
+	// 	if(password.value.length < 6 && username.value.length < 6){
+	// 		submitbutton.disabled = true
+	// 		pwwarning.textContent = "Password needs to be more than 5 characters long!"
+	// 	}if(username.value.length < 6 && password.value.length < 6){
+	// 		submitbutton.disabled = true
+			
+	// 	}else if(password.value.length >= 6 && username.value.length >= 6){
+	// 		pwwarning.textContent = ""
+	// 		submitbutton.disabled = false;
+	// 	}
+	// })
 
 // 	})
 // }
