@@ -3,31 +3,79 @@ $(document).ready(function(){
 	console.log("Hello from scripts.js")
 });
 
-// function testing(){
-	var userwarning		= document.getElementById("errmsg")
-	var submitbutton	= document.getElementById("submitbtn")
 
-	var password		= document.getElementById("pass")
-	var pwwarning 		= document.getElementById("pwwarning")
+var submitbutton 	= document.getElementById("submitbtn")
+submitbtn.disabled 	= true
+var username 		= document.getElementById("username")
+var password 		= document.getElementById("password")
+
+function validateUsername(){
+	var usernameErrmsg 	= document.getElementById("usernameErrmsg")
+	if(username.value.length < 6){
+		// console.log("less than 5")
+		usernameErrmsg.textContent = "Username needs to be more than 5 characters long!"
+		return false
+	}else{
+		usernameErrmsg.textContent = ""
+		return true
+	}
+
+}
+
+function validatePassword(){
+	var pwErrmsg 	= document.getElementById("pwErrmsg")
+	if(password.value.length < 6){
+		// console.log("less than 5")
+		pwErrmsg.textContent = "Password needs to be more than 5 characters long!"
+		return false
+	}else{
+		pwErrmsg.textContent = ""
+		return true
+	}
+}
+function permitSubmit(){
+	if(validateUsername() && validatePassword()){
+		console.log("Valid un and pw")
+		submitbutton.disabled = false;
+	}else{
+		submitbutton.disabled = true;
+	}
+}
+
+username.addEventListener("keyup", function(event){
+	validateUsername()
+	permitSubmit()
+})
+
+password.addEventListener("keyup", function(event){
+	validatePassword()
+	permitSubmit()
+})
+
+
+// function testing(){
+
+	// var password		= document.getElementById("pass")
+	// var pwwarning 		= document.getElementById("pwwarning")
 
 	// console.log(password)
-	submitbutton.disabled = true;
-	username.addEventListener("keyup", function(event){
+	// submitbutton.disabled = true;
+	// username.addEventListener("keyup", function(event){
 
-		if(username.value.length < 6){
-			// console.log("less than 5")
-			userwarning.textContent = "Username needs to be more than 5 characters long!"
+	// 	if(username.value.length < 6){
+	// 		// console.log("less than 5")
+	// 		userwarning.textContent = "Username needs to be more than 5 characters long!"
 
-		}
-		if(username.value.length < 6 && password.value.length < 6){
-			submitbutton.disabled = true
+	// 	}
+	// 	if(username.value.length < 6 && password.value.length < 6){
+	// 		submitbutton.disabled = true
 
-		}else if(username.value.length >= 6 && password.value.length >= 6){
-			console.log(username.value)
-			userwarning.textContent = ""
-			submitbutton.disabled = false;
-		}
-	})
+	// 	}else if(username.value.length >= 6 && password.value.length >= 6){
+	// 		console.log(username.value)
+	// 		userwarning.textContent = ""
+	// 		submitbutton.disabled = false;
+	// 	}
+	// })
 
 	// password.addEventListener("keyup", function(event){
 	// 	if(password.value.length < 6 && username.value.length < 6){
@@ -35,7 +83,7 @@ $(document).ready(function(){
 	// 		pwwarning.textContent = "Password needs to be more than 5 characters long!"
 	// 	}if(username.value.length < 6 && password.value.length < 6){
 	// 		submitbutton.disabled = true
-			
+
 	// 	}else if(password.value.length >= 6 && username.value.length >= 6){
 	// 		pwwarning.textContent = ""
 	// 		submitbutton.disabled = false;
