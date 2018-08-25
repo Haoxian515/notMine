@@ -4,19 +4,20 @@ var Recipe 	= require("../models/recipesSchema"),
 
 exports.getAllRecipes = function(req, res){
 
-	console.log("body: " + req.body)
+	// console.log("body: " + req.body)
 	console.log("query: " + req.query.searchbar)
-	console.log("params: " + req.params)
+	var queryString = req.query.searchbar
+	// console.log("params: " + req.params)
 
-	// Recipe.find({}, function(err, foundRecipes){
-	// 	if(err){
-	// 		console.log(err)
-	// 		res.redirect("/")
-	// 	}else{
-	// 		console.log(foundRecipes)
-	// 		res.send(foundRecipes)
-	// 	}
-	// })
+	Recipe.find({"title": { "$regex": queryString, "$options": "i" } }, function(err, foundRecipes){
+		if(err){
+			console.log(err)
+			res.redirect("/")
+		}else{
+			console.log(foundRecipes)
+			res.render("recipes", {foundRecipes: foundRecipes})
+		}
+	})
 }
 
 
