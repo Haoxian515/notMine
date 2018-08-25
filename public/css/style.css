@@ -98,7 +98,7 @@ a .recipeLink:hover{
 
 header nav li{
 	margin:0 15px;
-	margin-top:3%;
+	margin-top:1%;
 }
 
 li{
@@ -148,7 +148,8 @@ section{
  	min-width: 16em;
  	/*border-radius: 5%;*/
 
- 	box-shadow: 0 0 1em;
+ 	/*box-shadow: 0 0 1em;*/
+ 	box-shadow: 5px 5px 10px 3px #262626;
  }
  .category h2{
  	margin-top:15%;
