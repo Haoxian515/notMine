@@ -8,4 +8,14 @@ exports.isLoggedIn = function(req, res, next){
 	// res.redirect("back")
 }
 
+exports.isAdmin = function(req, res, next){
+	console.log("login check")
+	// console.log(req.user.admin)
+	if(req.isAuthenticated() && req.user.admin){
+		return next()
+	}
+	res.send("ADMIN PAGE!!!")
+	// res.redirect("back")
+}
+
 module.exports = exports;

@@ -11,7 +11,13 @@ var userSchema = new mongoose.Schema({
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "Recipe"
 		}
-	]
+	],
+
+	admin: {
+		type:Boolean,
+		default:false
+	}
+
 })
 
 userSchema.plugin(passportLocalMongoose);

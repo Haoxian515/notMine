@@ -16,15 +16,15 @@ router.post('/register', function(req, res){
 			username: req.body.username
 		})
 
-		User.register(newUser, req.body.password, function(err, user){
-			if(err){
-				console.log(err)
-				return res.redirect('/register');
-			}
-			passport.authenticate('local')(req, res, function(){
+		// User.register(newUser, req.body.password, function(err, user){
+		// 	if(err){
+		// 		console.log(err)
+		// 		return res.redirect('/register');
+		// 	}
+		// 	passport.authenticate('local')(req, res, function(){
 				res.redirect("/")
-			})
-		})
+		// 	})
+		// })
 
 })
 
@@ -40,6 +40,7 @@ router.post("/login",
 		}),function(req, res){
 		console.log("loging success")
 });
+
 
 router.get("/logout", function(req, res){
 	req.logout();

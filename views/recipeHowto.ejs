@@ -1,26 +1,38 @@
 <% include partials/header %>
 
 
-<section>
+<section style="width:75%; margin:0 auto;">
 
-	<div>
-		<%= recipe.title %>	
-		<br>
-		<br>
-		<%= recipe.description %>	
-		<br>
-		<br>
-		<% for(var ingredient of recipe.ingredients) { %>
-			<%= ingredient %>
-			<br>
-		<% } %>
-		<br>
-		<br>
-		<% for(var instruction of recipe.instructions) { %>
-			<%= instruction %>
-			<br>
-		<% } %>
-	</div>
+	<font face = "Verdana">
+		<%= recipe.recipe_group %>
+		<div>
+			<div style="margin: 1vw; font-size:4em" ><%= recipe.title %></div>	
+
+			<div style="margin: 1vw;"><%= recipe.description %></div>	
+
+
+			<div style="display:flex;">
+
+				<div style="margin: 1vw;flex-basis:40%;">
+					<div style="margin-bottom:2vw; font-size:2em">Ingredients needed:</div>
+					<% for(var ingredient of recipe.ingredients) { %>
+						<li style="margin-bottom:0.5vw">- <%= ingredient %></li>
+					<% } %>
+				</div>
+
+				<div style="margin: 1vw; flex-basis:60%;">
+					<div style="margin-bottom:2vw; font-size:2em" >Instructions:</div>
+					<% var listCounter = 1; %>
+					<% for(var instruction of recipe.instructions) { %>
+						<li style="margin-bottom:0.5vw"><%= listCounter %>. <%= instruction %></li>
+						<% listCounter++ %>
+					<% } %>
+					
+				</div>
+
+			</div>
+		</div>
+	</font>
 </section>
 
 <% include partials/footer %>

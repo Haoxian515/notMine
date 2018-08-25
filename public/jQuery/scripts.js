@@ -1,9 +1,10 @@
 $(document).ready(function(){
 
 	console.log("Hello from scripts.js")
-
-	
 });
+
+
+
 
 function appendForm(formID){
 
@@ -15,3 +16,10 @@ function appendForm(formID){
 		$('#instructionsList').append('<input type="text" name="instructions" placeholder="Instructions" />');
 	}
 }
+
+// function search(){
+// 	console.log("search function")
+// 	$("#searchbar").addEventListener("click", function(){
+// 		console.log("search bar click?")
+// 	})
+// }

@@ -10,7 +10,7 @@ var category = req.params.category
 			console.log(err)
 			res.redirect("/")
 		}else{
-			console.log(foundRecipes)
+			// console.log(foundRecipes)
 			res.render("recipes", {foundRecipes:foundRecipes, currentUser: req.user })
 		}
 	})
@@ -24,8 +24,8 @@ exports.recipeHowto = function(req, res){
 		if(err){
 			console.log(err)
 		}else{
-			console.log(foundRecipe)
-			res.render("recipeHowto", {recipe: foundRecipe})
+			// console.log(foundRecipe)
+			res.render("recipeHowto", {currentUser: req.user, recipe: foundRecipe})
 		}
 	})
 
