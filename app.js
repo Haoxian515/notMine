@@ -48,12 +48,12 @@ passport.deserializeUser(User.deserializeUser());
 
 //MAIN
 //PUSH TO DB
-var csvFiles = ["drinks_test.csv", "food_recipes.csv", "dessert_recipes.csv"]
+// var csvFiles = ["drinks_test.csv", "food_recipes.csv", "dessert_recipes.csv"]
 
-for(file of csvFiles){
-    console.log("looping files")
-    pushtodb(file)
-}
+// for(file of csvFiles){
+//     console.log("looping files")
+//     pushtodb(file)
+// }
 
 app.get("/", function(req, res){
 	// console.log(req.user)
