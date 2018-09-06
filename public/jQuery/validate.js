@@ -7,7 +7,7 @@ var password 		= document.getElementById("password")
 
 function validateUsername(){
 	var usernameErrmsg 	= document.getElementById("usernameErrmsg")
-	if(username.value.length < 6){
+	if(username.value.length < 5){
 		// console.log("less than 5")
 		usernameErrmsg.textContent = "Username needs to be more than 5 characters long!"
 		return false
@@ -20,7 +20,7 @@ function validateUsername(){
 
 function validatePassword(){
 	var pwErrmsg 	= document.getElementById("pwErrmsg")
-	if(password.value.length < 6){
+	if(password.value.length < 5){
 		// console.log("less than 5")
 		pwErrmsg.textContent = "Password needs to be more than 5 characters long!"
 		return false
