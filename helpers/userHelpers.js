@@ -181,6 +181,10 @@ exports.uploadFile = function(req, res){
 	})
 }
 
+exports.approve = function(req, res){
+	res.render("approve", {currentUser: req.user})
+}
+
 
 module.exports = exports;
 

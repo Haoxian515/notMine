@@ -26,6 +26,8 @@ router.get("/recipes/:category/:id", recipeHelpers.recipeHowto)
 //TEMP WITHOUT CHECKS
 router.get("/user/submit", userHelpers.submitRecipeForm)
 router.get("/user/favorites", userHelpers.favorites)
+router.get("/user/approve", userHelpers.approve)
+
 router.post("/user/submit",  userHelpers.submitRecipe)
 router.post("/user/upload", userHelpers.uploadFile)
 //temp without middleware
