@@ -1,9 +1,10 @@
+
+var postUrl = "/recipes/adminApprove"
+
 $(document).ready(function(){
 
 	console.log("Hello from scripts.js")
 });
-
-
 
 
 function appendForm(formID){
@@ -18,8 +19,21 @@ function appendForm(formID){
 }
 
 
-function adminApprove(param){
-	console.log(param)
+function adminApprove(recipeId){
+
+	$('li').on('click', function() {
+	    $(this).remove();
+	});
+	
+	// console.log(recipeId)
+	// console.log( "RECIPE APPROVED" );
+	$.post(postUrl, {recipeId: recipeId})
+	.then(function(){
+	})
+	.catch(function(err){
+		console.log(err)
+	})
+
 }
 
 // function search(){

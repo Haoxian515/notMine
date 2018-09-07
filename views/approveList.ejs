@@ -5,21 +5,15 @@
 <!-- basic layout -->
 <section class="recipe">
 
-	Approveal page
-	<ul>
-
-		<li>middlewar</li>
-		<li>post route to UPDATE boolean</li>
-		<li>submit page shoud now add to pending :pending f :approved T </li>
-	</ul>
+	Approval page
 
 	<div style="display:flex; flex-direction:column">
 		<% for(recipe of waitingRecipes){ %>
 			<li>
-				<a href="/user/recipePreview/<%= recipe._id %>" style="color: #265301;text-decoration: underline">
+				<a href="/recipes/recipePreview/<%= recipe._id %>" style="color: #265301;text-decoration: underline">
 					<%= recipe.title %> - <%= recipe.category %> 
 				</a>
-				<button onclick="adminApprove('<%= recipe._id %>')">Approve</button><button>Reject</button>
+				<button id="approve" onclick="adminApprove('<%= recipe._id %>')">Approve</button><button>Reject</button>
 			</li>	
 		<% } %>
 	</div>

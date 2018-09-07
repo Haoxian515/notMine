@@ -9,9 +9,13 @@ var Recipe 			= require("../models/recipesSchema"),
 
 
 
-
+router.get("/recipes/approveList", recipeHelpers.approve)
+router.get("/recipes/recipePreview/:recipeId", recipeHelpers.recipePreview)
 router.get("/recipes/:category", recipeHelpers.displayRecipes)
 router.get("/recipes/:category/:id", recipeHelpers.recipeHowto)
+
+router.post("/recipes/adminApprove", recipeHelpers.approvePost)
+
 //recipes
 //recipe related
 
@@ -26,8 +30,7 @@ router.get("/recipes/:category/:id", recipeHelpers.recipeHowto)
 //TEMP WITHOUT CHECKS
 router.get("/user/submit", userHelpers.submitRecipeForm)
 router.get("/user/favorites", userHelpers.favorites)
-router.get("/user/approveList", userHelpers.approve)
-router.get("/user/recipePreview/:recipeId", userHelpers.recipePreview)
+
 
 router.post("/user/submit",  userHelpers.submitRecipe)
 router.post("/user/upload", userHelpers.uploadFile)
