@@ -17,6 +17,11 @@ function appendForm(formID){
 	}
 }
 
+
+function adminApprove(param){
+	console.log(param)
+}
+
 // function search(){
 // 	console.log("search function")
 // 	$("#searchbar").addEventListener("click", function(){

@@ -17,8 +17,9 @@
 		<% for(recipe of waitingRecipes){ %>
 			<li>
 				<a href="/user/recipePreview/<%= recipe._id %>" style="color: #265301;text-decoration: underline">
-					<%= recipe.title %> - <%= recipe.category %> <button>Approve</button><button>Reject</button>
+					<%= recipe.title %> - <%= recipe.category %> 
 				</a>
+				<button onclick="adminApprove('<%= recipe._id %>')">Approve</button><button>Reject</button>
 			</li>	
 		<% } %>
 	</div>
