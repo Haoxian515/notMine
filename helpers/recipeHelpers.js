@@ -54,7 +54,7 @@ exports.approve = function(req, res){
 		if(err){
 			console.log(err)
 		}else{
-			console.log(foundRecipes)
+			// console.log(foundRecipes)
 			res.render("approveList", {currentUser: req.user, waitingRecipes: foundRecipes})
 		}
 	})
@@ -76,12 +76,29 @@ exports.approvePost = function(req, res, next){
 	})
 	console.log("recipe APPROVED!")
 
+
 // Model.findOne({ name: 'bourne' }, function (err, doc){
 //   doc.name = 'jason bourne';
 //   doc.visits.$inc();
 //   doc.save();
 // });
 }
+
+
+exports.rejectPost = function(req, res, next){
+	console.log("recipeHelpers.js rejectPost")
+	console.log("recipe REJECTED")
+	console.log(req.body.recipeId)
+	Recipe.findByIdAndRemove( req.body.recipeId, function (err, foundRecipe) {
+		if (err) {
+			// console.log(err)
+		}else{
+			console.log(foundRecipe.title + " removed !")
+		}
+	});
+}
+
+
 
 exports.recipePreview = function(req, res){
 	console.log(req.params.recipeId)
