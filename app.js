@@ -48,12 +48,12 @@ passport.deserializeUser(User.deserializeUser());
 
 //MAIN
 //PUSH TO DB
-var csvFiles = ["drinks_test.csv", "food_recipes.csv", "dessert_recipes.csv"]
+// var csvFiles = ["drinks_test.csv", "food_recipes.csv", "dessert_recipes.csv"]
 
-for(file of csvFiles){
-    console.log("looping files")
-    pushtodb(file)
-}
+// for(file of csvFiles){
+//     console.log("looping files")
+//     pushtodb(file)
+// }
 
 app.get("/", function(req, res){
 	// console.log(req.user)
@@ -85,7 +85,7 @@ function pushtodb(csvFile){
     // var csvFiles = ["drinks_test.csv", "food_recipes.csv", "dessert_recipes.csv"]
     // var csvFile="food_recipes.csv"
     // var csvFile='dessert_recipes.csv';
-    var inputFile='./public/testStorage/'+ csvFile;
+    var inputFile='./public/recipecsv/'+ csvFile;
 
     var parser = parse({delimiter: ','}, function (err, data) {
         // console.log(data[1][3].split("\r\n"))

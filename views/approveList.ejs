@@ -1,0 +1,30 @@
+<% include partials/header %>
+
+
+<!-- basic layout -->
+<!-- basic layout -->
+<section class="recipe">
+
+	Approval page
+
+	<div style="display:flex; flex-direction:column">
+		<% for(recipe of waitingRecipes){ %>
+			<li>
+				<a href="/recipes/recipePreview/<%= recipe._id %>" style="color: #265301;text-decoration: underline">
+					<%= recipe.title %> - <%= recipe.category %> 
+				</a>
+				<button id="approve" onclick="adminApprove('<%= recipe._id %>')">Approve</button><button>Reject</button>
+			</li>	
+		<% } %>
+	</div>
+</section>
+<!-- basic layout -->
+<!-- basic layout -->
+<!-- basic layout -->
+<!-- basic layout -->
+<!-- basic layout -->
+
+<% include partials/footer %>
+
+
+
