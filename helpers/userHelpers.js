@@ -106,16 +106,6 @@ exports.favorites = function(req, res){
 	.catch( (err) => function(){
 		console.log(err)
 	})
-	// Recipe.find(
-	// 	{
-	//     '_id': { $in: 
-	//     	testRecipeArray
-	//     }
-	// }, function(err, docs){
-	//      console.log(docs);
-	//      // favoritedRecipes = docs
-	//      res.render("recipes", {foundRecipes: docs})
-	// 	});
 }
 
 
@@ -180,6 +170,7 @@ exports.uploadFile = function(req, res){
 
 	})
 }
+
 
 
 module.exports = exports;

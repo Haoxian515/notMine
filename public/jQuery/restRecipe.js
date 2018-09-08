@@ -4,15 +4,15 @@ var postUrl = "/user/addToFavorites"
 
 $(document).ready(function(){
 
-	$( "#addToFavorite" ).click(function() {
-	  // console.log( "Favorite recipe" );
-	  // console.log($("#columnOne").text())
-	});
+	// $( "#addToFavorite" ).click(function() {
+	//   console.log( "Favorite recipFavorite recipFavorite recipFavorite recipe" );
+	//   // console.log($("#columnOne").text())
+	// });
 
 
 });
 
-function myFunction(recipeID){
+function favoriteRecipe(recipeID){
 	// console.log( "Favorite recipe" );
 	console.log("recipe favorited")
 	$.post(postUrl, {recipeID: recipeID})

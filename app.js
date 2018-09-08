@@ -47,7 +47,13 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //MAIN
-// pushtodb()
+//PUSH TO DB
+// var csvFiles = ["drinks_test.csv", "food_recipes.csv", "dessert_recipes.csv"]
+
+// for(file of csvFiles){
+//     console.log("looping files")
+//     pushtodb(file)
+// }
 
 app.get("/", function(req, res){
 	// console.log(req.user)
@@ -72,13 +78,14 @@ app.listen(PORT_NUM, function(){
 	console.log("listening on port 3000")
 });
 
-function pushtodb(){
+
+function pushtodb(csvFile){
     // push to db
     console.log("pushing to db!")
-    var csvFile = "drinks_test.csv"
+    // var csvFiles = ["drinks_test.csv", "food_recipes.csv", "dessert_recipes.csv"]
     // var csvFile="food_recipes.csv"
     // var csvFile='dessert_recipes.csv';
-    var inputFile='./public/testStorage/'+ csvFile;
+    var inputFile='./public/recipecsv/'+ csvFile;
 
     var parser = parse({delimiter: ','}, function (err, data) {
         // console.log(data[1][3].split("\r\n"))
