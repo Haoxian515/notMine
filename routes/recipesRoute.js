@@ -9,8 +9,8 @@ var Recipe 			= require("../models/recipesSchema"),
 
 
 
-router.get("/recipes/approveList", recipeHelpers.approve)
-router.get("/recipes/recipePreview/:recipeId", recipeHelpers.recipePreview)
+router.get("/recipes/approveList",middleware.isAdmin, recipeHelpers.approve)
+router.get("/recipes/recipePreview/:recipeId",middleware.isAdmin, recipeHelpers.recipePreview)
 router.get("/recipes/:category", recipeHelpers.displayRecipes)
 router.get("/recipes/:category/:id", recipeHelpers.recipeHowto)
 

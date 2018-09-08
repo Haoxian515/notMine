@@ -106,16 +106,6 @@ exports.favorites = function(req, res){
 	.catch( (err) => function(){
 		console.log(err)
 	})
-	// Recipe.find(
-	// 	{
-	//     '_id': { $in: 
-	//     	testRecipeArray
-	//     }
-	// }, function(err, docs){
-	//      console.log(docs);
-	//      // favoritedRecipes = docs
-	//      res.render("recipes", {foundRecipes: docs})
-	// 	});
 }
 
 
@@ -181,30 +171,6 @@ exports.uploadFile = function(req, res){
 	})
 }
 
-exports.approve = function(req, res){
-	Recipe.find({approved: false}, "title category _id", function(err, foundRecipes){
-		if(err){
-			console.log(err)
-		}else{
-			console.log(foundRecipes)
-			res.render("approveList", {currentUser: req.user, waitingRecipes: foundRecipes})
-		}
-	})
-
-}
-
-exports.recipePreview = function(req, res){
-	console.log(req.params.recipeId)
-	// res.render("recipePreview")
-	Recipe.findById(req.params.recipeId, "title category image_link", function(err, foundRecipe){
-		if(err){
-			console.log(err)
-		}else{
-			res.render("recipePreview", {currentUser: req.user, foundRecipe: foundRecipe})
-		}
-	})
-
-}
 
 
 module.exports = exports;
