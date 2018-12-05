@@ -16,15 +16,15 @@ router.post('/register', function(req, res){
 			username: req.body.username
 		})
 
-		// User.register(newUser, req.body.password, function(err, user){
-		// 	if(err){
-		// 		console.log(err)
-		// 		return res.redirect('/register');
-		// 	}
-		// 	passport.authenticate('local')(req, res, function(){
-		// 		res.redirect("/")
-		// 	})
-		// })
+		User.register(newUser, req.body.password, function(err, user){
+			if(err){
+				console.log(err)
+				return res.redirect('/register');
+			}
+			passport.authenticate('local')(req, res, function(){
+				res.redirect("/")
+			})
+		})
 
 		res.redirect("/")
 
